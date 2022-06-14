@@ -51,11 +51,11 @@ const SideBar = () => {
                 to="/use-cases"
                 className={location.pathname === "/use-cases" ? "selected" : ""}
               >
-                Use Cases of the HARBOR Protocol
+                Use Cases
               </NavLink>
             </Menu.Item>
-            <Menu.SubMenu key="m6" title="Components of the protocol" icon={<SvgIcon name="vaults-icon" viewbox="0 0 36 36" />}>
-              <Menu.Item key="m6-1" icon={<SvgIcon name="vaults-icon" viewbox="0 0 36 36" />}>
+            <Menu.SubMenu key="m6" title="Modules" icon={<SvgIcon name="vaults-icon" viewbox="0 0 36 36" />} >
+              <Menu.Item key="m6-1" icon={<SvgIcon name="vaults-icon" viewbox="0 0 36 36" />} >
                 <NavLink
                   to="/vaults"
                   className={location.pathname === "/vaults" ? "selected" : ""}
@@ -149,7 +149,7 @@ const SideBar = () => {
                 to="/summary"
                 className={location.pathname === "/summary" ? "selected" : ""}
               >
-                Summary of how the Peg is stabilized
+                How the Peg is stabilized
               </NavLink>
             </Menu.Item>
             <Menu.Item key="m8" icon={<SvgIcon name="risk-icon" viewbox="0 0 30 28.451" />}>
