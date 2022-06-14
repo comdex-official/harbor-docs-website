@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./index.less";
 
-import liquidationImg from '../../assets/images/liquidation.png';
+import liquidationImg from '../../assets/images/liquidation2.jpeg';
 
 const Liquidations = () => {
   return (
@@ -14,9 +14,8 @@ const Liquidations = () => {
       <p>
         The liquidation mechanism is designed to be impartial and fair. When a vault gets liquidated, only a limited portion of the collateral is sold to recover the debt and restore the collateralization ratio to minimum safety levels. <br />
         There is also a liquidation penalty charged based on the amount of Composite debt to be recovered. The formula of the same is:
-        <img className="my-2" src={liquidationImg} alt="Liquidations" /> <br />
-        Until the auction is completed and the collateral ratio is restored for a vault, the vault is locked and a user cannot access it. <br />
-        Github Link: 
+        <img className="my-2" src={liquidationImg} alt="Liquidations" /> 
+        Until the auction is completed and the collateral ratio is restored for a vault, the vault is locked and a user cannot access it.  
       </p>
     </div>
   );

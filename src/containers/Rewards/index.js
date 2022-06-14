@@ -42,7 +42,7 @@ const Rewards = () => {
       </p>
       <p>
         Assuming a user deposits 100 $CMST, at the end of 1st year they will have 105 $CMST ( 100 $CMST Principle and 5 $CMST Interest) in their locker, and at the end of 2nd year, they will have 110.25 $CMST ( 100 $CMST Principle and 10.25 $CMST Interest). <br />
-        Github Link: 
+       
       </p>
     </div>
   );

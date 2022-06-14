@@ -26,19 +26,19 @@ const data = [
   {
     icon: <SvgIcon name='risk-icon' viewbox='0 0 30 28.451' />,
     title: 'Risk',
-    description: 'Different types of risks associated with using the Protocol.',
+    description: 'Different types of risks associated with using the Protocol',
     url: '/risk',
   },
   {
     icon: <SvgIcon name='governance-icon' viewbox='0 0 32.076 28.288' />,
     title: 'Governance',
-    description: 'Governance will follow a democratic approach.',
+    description: 'Governance will follow a democratic approach',
     url: '/governance',
   },
   {
     icon: <SvgIcon name='faq-icon' viewbox='0 0 33.846 33.846' />,
     title: 'Faq',
-    description: 'Some Frequently asked questions answered.',
+    description: 'Some Frequently asked questions answered',
     url: '/faq',
   },
 ];
@@ -78,7 +78,7 @@ const Home = () => {
             <div className="arrow-link"><SvgIcon name='arrow-topright' viewbox='0 0 22.056 22.504' /></div>
             <SvgIcon name='harbor-icon' viewbox='0 0 21.395 28.5' />
             <h4>Harbor app</h4>
-            <p>link to redirect <br /> traffic to app</p>
+            <p>Link to redirect <br /> to the app </p>
           </div>
         </Link>
         <Link to={{ pathname: "https://discord.gg/ypUb5Gyh7Z" }} target="_blank">
@@ -86,7 +86,7 @@ const Home = () => {
             <div className="arrow-link"><SvgIcon name='arrow-topright' viewbox='0 0 22.056 22.504' /></div>
             <SvgIcon name='discord' viewbox='0 0 29.539 22.155' />
             <h4>Discord</h4>
-            <p>chat with community <br /> on discord</p>
+            <p>Chat with the community <br /> on Discord</p>
           </div>
         </Link>
         <Link to={{ pathname: "/" }}>
@@ -94,7 +94,7 @@ const Home = () => {
             <div className="arrow-link"><SvgIcon name='arrow-topright' viewbox='0 0 22.056 22.504' /></div>
             <SvgIcon name='help-icon' viewbox='0 0 27 31.5' />
             <h4> Found an issue?</h4>
-            <p>improve this page by adding <br /> suggestion on Github</p>
+            <p>Improve this page by adding <br />suggestion on Github </p>
           </div>
         </Link>
       </div>

@@ -19,21 +19,7 @@ const Introduction = () => {
         In the following document, we will discuss the Harbor protocol and Composite in detail. For further discussions, connect with our community and team.
       </p>
 
-      <div className="into-link">
-        Check out:
 
-        <Link to={{ pathname: "https://twitter.com/Harbor_Finance" }} target="_blank">
-          Twitter
-        </Link>
-        ||
-        <Link to={{ pathname: "https://t.me/Harbor_finance" }} target="_blank">
-          Telegram
-        </Link>
-        ||
-        <Link to={{ pathname: "https://discord.gg/ypUb5Gyh7Z" }}>
-          Discord
-        </Link>
-      </div>
     </div>
   );
 };
