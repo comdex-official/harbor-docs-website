@@ -10,7 +10,7 @@ const HarborProtocol = () => {
         Harbor protocol is the dApp on the Comdex chain (powered by the Cosmos SDK and CosmWasm smart contracts) that enables safelisted assets to be locked in Vaults and mint Composite. The protocol also facilitates users to earn interest by depositing Composite in its Locker module. The protocol also enables market makers and users to capitalize on arbitrage opportunities with its StableMint feature ensuring Composite maintains its peg in secondary markets.
       </p>
       <p>
-        $HARBOR is the native CW20 token of the protocol which has 2 primary functions.
+      $HARBOR is the cosmos native token of the protocol which has 2 primary functions.
       </p>
       <ul>
         <li>
