@@ -45,9 +45,7 @@ const Vaults = () => {
       <p>
         When a user repays their debt, the outstanding interest is deducted first and sent to the Collector module, and then the principal debt is reduced. This ensures accrual of $CMST in the collector module. As the interest is calculated per block on the total $CMST due (which is the sum of Principal and Interest accrued till the last block), collecting the interest first does not negatively affect the user’s loan position as his principal (total debt) is still the same for the next block.
         <br />
-        Eg:
-        <br />
-        Github Link: 
+        
       </p>
     </div>
   );

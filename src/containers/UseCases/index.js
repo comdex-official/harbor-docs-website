@@ -47,7 +47,7 @@ const UseCases = () => {
           When debt is repaid, first the interest is deducted and transferred to the collector and then the debt is reduced.
         </li>
         <li>
-          In the Earn feature, the User can deposit Composite in the Locker module and earn interest which is compounded and added back to the locker module. <br /> There is no bonding period, and the user can withdraw composite at any time.
+          In the Earn feature, the User can deposit Composite in the Locker module and earn interest which is compounded and added back to the locker module. There is no bonding period, and the user can withdraw composite at any time.
         </li>
         <li>
           The interest earned in the locker module is subject to change for existing lockers, and this is reviewed periodically and changed via governance.

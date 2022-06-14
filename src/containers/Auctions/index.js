@@ -2,21 +2,21 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./index.less";
 
-import auctionImg from '../../assets/images/auction.png';
+import auctionImg from '../../assets/images/liquidation2.jpeg';
 
 const Auctions = () => {
   return (
     <div>
       <h2>Auctions</h2>
       <p>
-        There are three types of auctions that will be taking place in the protocol which are Surplus Auction, Debt Auction, and Collateral Auction. <br />Github Link: 
+        There are three types of auctions that will be taking place in the protocol which are Surplus Auction, Debt Auction, and Collateral Auction. <br />
       </p>
       <h3>Surplus auction</h3>
       <p>
         In Surplus auctions, the Harbor protocol auctions off excess $CMST for HARBOR in order to reduce the $CMST surplus that has built up in the Collector module primarily from stability and liquidation fees. The HARBOR token collected from the auction in exchange of the surplus $CMST will be burned by the Protocol, thereby reducing the HARBOR supply. Users can place bids strategically to get more $CMST in exchange for the HARBOR.
       </p>
       <p>
-        The surplus auctions will be triggered automatically when the surplus $CMST in the collector module exceeds the upper ceiling by a certain level. The excess $CMST will then be auctioned off using the English auction. Users bid increasing amount of $HARBOR tokens in exchange for a fixed lot of $CMST. <br />
+        The surplus auctions will be triggered automatically when the surplus $CMST in the collector module exceeds the upper ceiling by a certain level. The excess $CMST will then be auctioned off using the English auction. Users bid increasing amount of $HARBOR tokens in exchange for a fixed lot of $CMST.
         Once the auction is complete the $CMST is transferred to the users wallet and the $HARBOR collected is burned through the mintburn module.
       </p>
       <p>
@@ -34,7 +34,7 @@ const Auctions = () => {
       </p>
       <h3>Collateral Auction</h3>
       <p>
-        The Harbor platform uses Maker’s Liquidations 2.0 Dutch styled auctions for insufficiently collateralized Vault which settle instantly.  When a vault's collateralization ratio falls below its liquidation ratio, the user will lose entire access to his vault until the auction is carried out and the protocol is able to recover the debt to bring the Collateralization ratio back up to the safety level. <br />
+        The Harbor platform uses Maker’s Liquidations 2.0 Dutch styled auctions for insufficiently collateralized Vault which settle instantly.  When a vault's collateralization ratio falls below its liquidation ratio, the user will lose entire access to his vault until the auction is carried out and the protocol is able to recover the debt to bring the Collateralization ratio back up to the safety level.
         These auctions are settled instantaneously giving advantage to auction participants who are risk free from market volatility. The price of the asset being auctioned decreases as per a fixed linear function allowing users to take profitable trades compared to external markets.
       </p>
       <h3>The Process:</h3>

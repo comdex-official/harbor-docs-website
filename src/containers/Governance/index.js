@@ -46,7 +46,7 @@ const Governance = () => {
         </li>
         <li>
           Locker- create
-          <ol type="a">
+          <ol >
             <li>Asset whitelist</li>
           </ol>
         </li>

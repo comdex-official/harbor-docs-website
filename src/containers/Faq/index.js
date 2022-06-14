@@ -5,7 +5,7 @@ import "./index.less";
 const Faq = () => {
   return (
     <div>
-      <h2>Faq</h2>
+      
       <h3>What is Composite?</h3>
       <p>
         Composite ($CMST) is an IBC-native fully-collateralized stablecoin designed to represent purchasing power and is therefore soft pegged to $1; however, as the global macro landscape develops, that may be subject to change in the future.

@@ -144,14 +144,7 @@ const SideBar = () => {
                 </NavLink>
               </Menu.Item>
             </Menu.SubMenu>
-            <Menu.Item key="m7" icon={<SvgIcon name="summary-icon" viewbox="0 0 24.75 16.875" />}>
-              <NavLink
-                to="/summary"
-                className={location.pathname === "/summary" ? "selected" : ""}
-              >
-                How the Peg is stabilized
-              </NavLink>
-            </Menu.Item>
+            
             <Menu.Item key="m8" icon={<SvgIcon name="risk-icon" viewbox="0 0 30 28.451" />}>
               <NavLink
                 to="/risk"
@@ -178,10 +171,10 @@ const SideBar = () => {
             </Menu.Item>
           </Menu>
           <div className="social-footer">
-            <Link to={{ pathname: "https://twitter.com/Harbor_Finance" }} target="_blank">
+            <Link to={{ pathname: "https://twitter.com/Harbor_Protocol" }} target="_blank">
               <SvgIcon name="twitter" viewbox="0 0 25.617 20.825" />
             </Link>
-            <Link to={{ pathname: "https://t.me/Harbor_finance" }} target="_blank">
+            <Link to={{ pathname: "https://t.me/Composite_Money" }} target="_blank">
               <SvgIcon name="telegram" viewbox="0 0 24.635 20.66" />
             </Link>
             <Link to={{ pathname: "/" }}>
