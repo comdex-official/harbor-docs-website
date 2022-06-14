@@ -1,0 +1,140 @@
+@import "./_variables.less";
+
+html,
+body {
+	min-height: 100vh;
+	font-family: @font-family;
+	text-rendering: optimizeLegibility !important;
+	-webkit-font-smoothing: antialiased !important;
+	font-smoothing: antialiased !important;
+	font-feature-settings: normal !important;
+	font-variant: normal !important;
+	font-size: @font-size-base + 2;
+	scroll-behavior: smooth;
+	padding: 0;
+	margin: 0;
+	background: #f8f3fb;
+	color: @secondary-color;
+}
+
+body {
+	& > {
+		iframe{
+			display: none; 
+		}
+	}
+}
+
+main {
+	position: relative;
+}
+
+a {
+	text-decoration: none;
+}
+
+.icon {
+	width: 16px;
+	height: auto;
+	fill: #000;
+	transition: fill 0.3s;
+
+	&.icon-white {
+		fill: #fff;
+	}
+}
+
+#root {
+	overflow-x: hidden;
+}
+
+.anchor-tag {
+	cursor: pointer;
+}
+
+h1 {
+	font-size: 2.5rem;
+	font-weight: bold;
+}
+
+h2 {
+	font-weight: bold;
+	font-size: 2rem;
+}
+
+h3 {
+	font-size: @font-size-xlg + 2;
+	font-weight: 600;
+}
+
+h4 {
+	font-size: 1.4rem;
+}
+
+p {
+	font-size: @font-size-base + 2;
+}
+
+
+.main-content {
+	max-width: 1440px;
+	width: 100%;
+	margin: auto;
+	.ant-layout-sider {
+		background: none;
+		width: 100%;
+		max-width: 290px;
+	}
+
+	.right-content-wrapper {
+		background: none;
+		padding:0 20px;
+		img{
+			max-width: 100%;
+		}
+		.rightcontent-wrapperinner{
+			padding: 20px 30px;
+			margin-top: 35px;
+			background: @white;
+			border-radius: 15px;
+			box-shadow: 3px 3px 10px rgb(174 174 192 / 40%), inset -8px -8px 12px rgb(174 174 192 / 25%);
+		}
+	}
+}
+
+.ant-layout {
+	background: none;
+
+	.ant-layout-footer {
+		&.main-footer {
+			color: @secondary-color;
+			text-align: center;
+			padding: 15px 0;
+			height: 30px;
+			background: none;
+			margin-top: 1rem;
+		}
+	}
+}
+
+.disable-class {
+	pointer-events: none;
+}
+
+.ScrollbarsCustom-TrackY {
+	background: rgb(220, 220, 220) !important;
+	width: 6px !important;
+
+	.ScrollbarsCustom-ThumbY {
+		background: @primary-color !important;
+	}
+}
+
+.ScrollbarsCustom-TrackX {
+	background: rgb(220, 220, 220) !important;
+	height: 6px !important;
+
+	.ScrollbarsCustom-ThumbX {
+		background: @primary-color !important;
+	}
+}
