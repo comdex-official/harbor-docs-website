@@ -37,7 +37,7 @@ const data = [
   },
   {
     icon: <SvgIcon name='faq-icon' viewbox='0 0 33.846 33.846' />,
-    title: 'Faq',
+    title: 'FAQs',
     description: 'Some Frequently asked questions answered',
     url: '/faq',
   },
