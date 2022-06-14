@@ -48,7 +48,7 @@ const Home = () => {
   return (
     <div>
       <h2 className="mb-0">Harbor Documentation</h2>
-      <h4>A seamless borrowing and lending platform built on Comdex</h4>
+      <h4 style={{fontSize:"20px", color:"gray"}}>Harbor protocol enables safelisted assets to be locked in Vaults and Composite to be minted</h4>
       <h2 className="mb-0 mt-4">Explore Harbor</h2>
       <List
         className="home-list"
