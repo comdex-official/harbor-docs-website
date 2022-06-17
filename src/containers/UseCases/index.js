@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { BottomNav } from "../../components/common";
 import "./index.less";
 
 const UseCases = () => {
@@ -67,6 +67,14 @@ const UseCases = () => {
           </ol>
         </li>
       </ul>
+
+      <BottomNav 
+        preNavLink="Faq"
+        prevNavText="FAQs"
+        nextNavLink="vaults"
+        nextNavText="Vaults"
+      />
+
     </div>
   );
 };

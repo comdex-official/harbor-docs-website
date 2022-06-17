@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { BottomNav } from "../../components/common";
 import "./index.less";
 
 import auctionImg from '../../assets/images/liquidation2.jpeg';
@@ -48,6 +48,14 @@ const Auctions = () => {
         The below formula is used to determine the quantity of the collateral asset which will get auctioned out in exchange for $CMST.
         <img className="my-3" src={auctionImg} alt="auction" />
       </p>
+
+      <BottomNav 
+        preNavLink="liquidations"
+        prevNavText="Liquidations"
+        nextNavLink="governance"
+        nextNavText="Governance"
+      />
+
     </div>
   );
 };

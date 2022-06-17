@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { BottomNav } from "../../components/common";
 import "./index.less";
 
 const Composite = () => {
@@ -54,6 +55,13 @@ This would increase the supply of $CMST and stabilize the peg. <br /> <br />
       <p>
         If the market price of $CMST is above 1 USD, HARBOR holders can choose to gradually decrease the Locker Savings Rate, which will reduce demand and should reduce the market price of $CMST toward the 1USD Target Price.
       </p>
+
+      <BottomNav 
+        preNavLink="introduction"
+        prevNavText="Introduction"
+        nextNavLink="harbor-protocol"
+        nextNavText="Harbor Protocol "
+      />
 
     </div>
   );
