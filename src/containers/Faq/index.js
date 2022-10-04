@@ -115,11 +115,6 @@ const Faq = () => {
         It simply means that the value of 1 $CMST is equal to $1. In other words, the value of $CMST is soft pegged to the US dollar.
       </p>
 
-      <h3>How does Composite maintain its peg?</h3>
-      <p>
-        Composite implemented a five-layer defence mechanism to avoid debugging. Refer to our detailed blog to learn more about our defence mechanism : [LINK]
-      </p>
-
       <h3>What is the Liquidation Price?</h3>
       <p>
         Based on the vault’s collateral ratio and the vault’s liquidation ratio, it is possible to predict the price at which the vault will get liquidated. This is the liquidation price.
