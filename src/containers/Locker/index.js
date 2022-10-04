@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { BottomNav } from "../../components/common"; 
 import "./index.less";
 
 const Locker = () => {
@@ -17,8 +17,15 @@ const Locker = () => {
       </p>
       <p>
         It is important to note that the LSR will be reviewed periodically and changed through governance polling frequently, affecting the existing locker positions too. Locker users are advised to keep up to date with the governance proposals and monitor the app frequently for changed LSR.
-        
       </p>
+
+      <BottomNav 
+        preNavLink="vaults"
+        prevNavText="Vaults"
+        nextNavLink="collector"
+        nextNavText="Collector"
+      />
+
     </div>
   );
 };

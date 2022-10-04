@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { BottomNav } from "../../components/common";
 import "./index.less";
 
 import liquidationImg from '../../assets/images/liquidation2.jpeg';
@@ -20,6 +20,14 @@ const Liquidations = () => {
       <p>
         The user's collateral will be auctioned off to collect the debt which the protocol owns and subsequently his vault will be closed. The collateral is auctioned off to recover the $CMST debt along with the liquidation penalty.
       </p>
+
+      <BottomNav 
+        preNavLink="rewards"
+        prevNavText="Rewards"
+        nextNavLink="auctions"
+        nextNavText="Auctions"
+      />
+
     </div>
   );
 };

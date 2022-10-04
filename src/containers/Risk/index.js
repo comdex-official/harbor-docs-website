@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { BottomNav } from "../../components/common";
 import "./index.less";
 
 const Risk = () => {
@@ -28,6 +28,14 @@ const Risk = () => {
         <li>Debt Ceiling</li>
         <li>Liquidation Penalty</li>
       </ul>
+
+      <BottomNav 
+        preNavLink="mintburn"
+        prevNavText="Tokenmint"
+        nextNavLink="tokenomics"
+        nextNavText="Tokenomics"
+      />
+
     </div>
   );
 };

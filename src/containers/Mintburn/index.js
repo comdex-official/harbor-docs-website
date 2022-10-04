@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { BottomNav } from "../../components/common";
 import "./index.less";
 
 const Mintburn = () => {
@@ -9,6 +9,14 @@ const Mintburn = () => {
       <p>
         In the tokenmint module, when the system reaches a debt threshold, it mints HARBOR token for $CMST. This has been discussed in detail in the Auction module.
       </p>
+
+      <BottomNav 
+        preNavLink="emergency-shutdown"
+        prevNavText="Emergency Shutdown"
+        nextNavLink="risk"
+        nextNavText="Risk"
+      />
+
     </div>
   );
 };

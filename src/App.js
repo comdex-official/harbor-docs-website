@@ -82,9 +82,8 @@ const App = () => {
 						<>
 							<Sider
 								width={380}
-								collapsible
 								breakpoint="lg"
-								collapsedWidth="0"
+      							collapsedWidth="80"
 								theme="light"
 								className="Harbor-sider"
 								collapsed={isOpen}

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { BottomNav } from "../../components/common";
 import "./index.less";
 
 const Introduction = () => {
@@ -19,6 +20,12 @@ const Introduction = () => {
         In the following document, we will discuss the Harbor protocol and Composite in detail. For further discussions, connect with our community and team.
       </p>
 
+      <BottomNav 
+        preNavLink="/"
+        prevNavText="Home"
+        nextNavLink="composite"
+        nextNavText="Composite ($CMST)"
+      />
 
     </div>
   );

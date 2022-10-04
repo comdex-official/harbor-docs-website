@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { BottomNav } from "../../components/common";
 import "./index.less";
 
 import rewardImg from '../../assets/images/reward-img.png';
@@ -41,9 +41,16 @@ const Rewards = () => {
         If the Locker savings rate is set to 5%, the value will compound per block in such a way that at the end of the year the LSR interest will be exactly 5% of the principle.
       </p>
       <p>
-        Assuming a user deposits 100 $CMST, at the end of 1st year they will have 105 $CMST ( 100 $CMST Principle and 5 $CMST Interest) in their locker, and at the end of 2nd year, they will have 110.25 $CMST ( 100 $CMST Principle and 10.25 $CMST Interest). <br />
-       
+        Assuming a user deposits 100 $CMST, at the end of 1st year they will have 105 $CMST ( 100 $CMST Principle and 5 $CMST Interest) in their locker, and at the end of 2nd year, they will have 110.25 $CMST ( 100 $CMST Principle and 10.25 $CMST Interest). 
       </p>
+
+      <BottomNav 
+        preNavLink="collector"
+        prevNavText="Collector"
+        nextNavLink="liquidations"
+        nextNavText="Liquidations"
+      />
+
     </div>
   );
 };

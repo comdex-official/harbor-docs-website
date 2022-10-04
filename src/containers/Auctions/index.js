@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { BottomNav } from "../../components/common";
 import "./index.less";
 
 import auctionImg from '../../assets/images/liquidation2.jpeg';
@@ -61,6 +61,14 @@ const Auctions = () => {
       <p>
         <b>$CMST sent to Collector = </b>$CMST collected from Auction - $CMST Burnt
       </p>
+
+      <BottomNav 
+        preNavLink="liquidations"
+        prevNavText="Liquidations"
+        nextNavLink="governance"
+        nextNavText="Governance"
+      />
+
     </div>
   );
 };

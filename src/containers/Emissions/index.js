@@ -1,4 +1,5 @@
 import React from 'react'
+import { BottomNav } from '../../components/common'
 
 const Emissions = () => {
     return (
@@ -41,6 +42,13 @@ const Emissions = () => {
                 <p>
                     Due to the declining inflation design, annual inflation relative to the total supply will be lower in the long run than it is currently, regardless of the $HARBOR's future circulation supply and locking ratio.
                 </p>
+
+                <BottomNav
+                    preNavLink="harbor-protocol"
+                    prevNavText="Introducing Harbor"
+                    nextNavLink="vault-voting"
+                    nextNavText="Vault voting"
+                />
             </div>
         </>
     )

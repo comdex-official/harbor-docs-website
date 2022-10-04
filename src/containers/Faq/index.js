@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { BottomNav } from "../../components/common";
 import "./index.less";
 
 const Faq = () => {
@@ -128,6 +129,14 @@ const Faq = () => {
       <p>
         Collateral ratio is ratio of the value of asset locked and the amount of $CMST due for a Vault. This parameter helps evaluate the risk and also is used as a parameter to trigger liquidations when collateral ratio falls below safety levels.
       </p>
+      
+      <BottomNav 
+        preNavLink="tokenomics"
+        prevNavText="Tokenomics"
+        nextNavLink="glossary"
+        nextNavText=" Glossary"
+      />
+
     </div>
   );
 };

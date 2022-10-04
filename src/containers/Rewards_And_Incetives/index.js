@@ -1,5 +1,6 @@
 import React from 'react'
 import incentiveMatrix from '../../assets/images/Harbor_protol_01.png';
+import { BottomNav } from '../../components/common';
 
 const RewardAndIncentive = () => {
     return (
@@ -32,6 +33,13 @@ const RewardAndIncentive = () => {
                     </p>
                 </li>
             </ol>
+
+            <BottomNav
+                preNavLink="vault-voting"
+                prevNavText="Vault voting"
+                nextNavLink="use-cases"
+                nextNavText="Use Cases"
+            />
         </div>
     )
 }

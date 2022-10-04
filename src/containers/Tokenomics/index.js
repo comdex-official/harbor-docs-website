@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { BottomNav } from "../../components/common";
 import "./index.less";
 
 import tokenomicsImg from '../../assets/images/Tokenomics_1.png';
@@ -13,20 +13,23 @@ const Tokenomics = () => {
       </p>
       <ul>
         <li>
-          <b>70% Emissions</b> will be distributed as incentives over a period of 6 years to the community which will be split into CMST minters and $veHARBOR lockers.
+          <b>55% Emissions </b> will be distributed as incentives over a period of ~6 years to the community
         </li>
         <li>
           <b>15% Airdrop</b>  to various communities based on different tasks
         </li>
         <li>
-          <b>15% for the Team </b>  to be vested for 2 years with a 6 month cliff
+          <b>15% for Investors </b> to be vested over 18 months linearly with a 6 month cliff
+        </li>
+        <li>
+          <b>15% for the Team </b>  to be vested over 24 month linearly with a 6 month cliff
           <p className="harbor_distribution_container">
             <img src={tokenomicsImg} alt="Harbor Distribution" className="ml-4 harbor_distribution" />
           </p>
         </li>
       </ul>
       <p>
-        With nearly 85% of the tokens being given away as community incentives, $HARBOR has the most distinctive and community-focused tokenomics.
+        With nearly 70% of the tokens being given away as community incentives, $HARBOR has the most distinctive and community-focused tokenomics.
       </p>
       <p>
         From the allocated emissions, 5% of the actual emissions that are distributed each week depending on the $veHARBOR/Harbor ratio will be sent to the team address in order to finance ongoing costs and all upcoming development activities.
@@ -78,6 +81,14 @@ const Tokenomics = () => {
       </p>
       <h3>Read more about how the ve(3,3) model works here:</h3>
       <a href="https://andrecronje.medium.com/solidly-feature-updates-and-launch-date-97be7e50e282" target="_blank">https://andrecronje.medium.com/solidly-feature-updates-and-launch-date-97be7e50e282 </a>
+
+
+      <BottomNav
+        preNavLink="risk"
+        prevNavText="Risk"
+        nextNavLink="Faq"
+        nextNavText="FAQs"
+      />
     </div>
   );
 };

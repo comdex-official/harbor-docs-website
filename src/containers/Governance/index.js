@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { BottomNav } from "../../components/common";
 import "./index.less";
 
 const Governance = () => {
@@ -59,6 +59,14 @@ const Governance = () => {
         <li> Surplus/ Debt Auctions true or false per asset.</li>
         <li>ESM-to do</li>
       </ul>
+
+      <BottomNav 
+        preNavLink="auctions"
+        prevNavText="Auctions"
+        nextNavLink="stable-mint"
+        nextNavText="StableMint"
+      />
+
     </div>
   );
 };
