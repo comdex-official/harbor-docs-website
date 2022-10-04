@@ -11,7 +11,7 @@ const HarborProtocol = () => {
         Harbor protocol is the dApp on the Comdex chain (powered by the Cosmos SDK and CosmWasm smart contracts) that enables safelisted assets to be locked in Vaults and mint Composite. The protocol also facilitates users to earn interest by depositing Composite in its Locker module. The protocol also enables market makers and users to capitalize on arbitrage opportunities with its StableMint feature ensuring Composite maintains its peg in secondary markets.
       </p>
       <p>
-      $HARBOR is the cosmos native token of the protocol which has 2 primary functions.
+        $HARBOR is the cosmos native token of the protocol which has 2 primary functions.
       </p>
       <ul>
         <li>
@@ -35,27 +35,26 @@ const HarborProtocol = () => {
             <li>Spending from Surplus in case of special cases</li>
           </ol>
         </li>
+        <br />
         <li>
           <p>
-            $HARBOR as a recapitalization source: Complementing its function as a governance token, $HARBOR token is also intended to maintain the health of the system in case of exceeding debt in the system and be the final backstop to re-peg Composite token in secondary markets ( during catastrophic events such as the black swan event).
+            $HARBOR as a recapitalization source: Complementing its function as a governance token, $HARBOR token is also intended to maintain the health of the system in case of exceeding debt in the system and be the final backstop to re-peg Composite token in secondary markets ( during catastrophic events such as the black swan event).          </p>
+          <p>
+            If there are a multitude of bad debts existing in the system which do not generate revenue with the expected interest, the system surplus will start depleting. If the system surplus falls below a certain safety limit, then new $HARBOR tokens are minted and auctioned off via Debt Auctions in exchange for $CMST which stabilizes the surplus.
           </p>
           <p>
-            If there are a multitude of bad debts existing in the system which do not generate revenue with the expected interest, the system surplus will start depleting. If the system surplus falls below a certain safety limit, then new $HARBOR tokens are minted and auctioned off via Debt Auctions in exchange for $CMST which stabilizes the surplus. This action dilutes the share of $HARBOR token holders.
-          </p>
-          <p>
-            Inversely, if the system is in a healthy state and if the surplus is growing at a steady-state, above certain surplus limits $CMST can be auctioned off in exchange for $HARBOR tokens via Surplus Auctions. The received $HARBOR tokens are burned off reducing the supply of the same and concentrating a token holder’s share.
-          </p>
+            Inversely, if the system is in a healthy state and if the surplus is growing at a steady-state and crosses above the surplus limits, then this is distributed to $veHARBOR token holders. This concept enables the protocol to align with long-term token holders, incentivize borrowers, and boost user participation and engagement with the system.          </p>
           <p>
             This nature of burning and minting $HARBOR token gives each holder a strong incentive to govern the system well.
           </p>
         </li>
       </ul>
 
-      <BottomNav 
+      <BottomNav
         preNavLink="composite"
         prevNavText="Composite ($CMST)"
-        nextNavLink="Faq"
-        nextNavText="FAQs"
+        nextNavLink="emissions"
+        nextNavText="Emissions"
       />
 
     </div>

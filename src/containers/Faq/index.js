@@ -75,11 +75,6 @@ const Faq = () => {
         Once a specific vault is liquidated, the asset is sent for the auctions for a discounted price. People can buy that asset for a cheaper price than the market in the auction.
       </p>
 
-      <h3>What are Surplus auctions?</h3>
-      <p>
-        In Surplus auctions, the Harbor protocol auctions off excess $CMST for HARBOR in order to reduce the $CMST surplus that has built up in the Collector module primarily from stability and liquidation fees.
-      </p>
-
       <h3>What are debt auctions?</h3>
       <p>
         A debt auction is the process in which the Harbor protocol will mint and auction new HARBOR tokens for $CMST in order to recover the debt that has built up in the system.
@@ -136,10 +131,10 @@ const Faq = () => {
       </p>
       
       <BottomNav 
-        preNavLink="harbor-protocol"
-        prevNavText="Harbor Protocol"
-        nextNavLink="use-cases"
-        nextNavText="Use Cases of the HARBOR Protocol"
+        preNavLink="tokenomics"
+        prevNavText="Tokenomics"
+        nextNavLink="glossary"
+        nextNavText=" Glossary"
       />
 
     </div>

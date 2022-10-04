@@ -60,7 +60,7 @@ This would increase the supply of $CMST and stabilize the peg. <br /> <br />
         preNavLink="introduction"
         prevNavText="Introduction"
         nextNavLink="harbor-protocol"
-        nextNavText="Harbor Protocol "
+        nextNavText="Introducing Harbor "
       />
 
     </div>

@@ -17,7 +17,7 @@ const EmergencyShutdown = () => {
         preNavLink="price-oracles"
         prevNavText="Price Oracles"
         nextNavLink="mintburn"
-        nextNavText="Mintburn"
+        nextNavText="Tokenmint"
       />
 
     </div>

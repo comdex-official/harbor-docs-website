@@ -25,7 +25,7 @@ const Collector = () => {
         <b>Locker Savings Rate:</b> This is the only deduction component of the collector module, where the interest earned by users is sourced from the collector module.
       </p>
       <p>
-        This module has a Surplus Threshold and a Debt Threshold. In the ideal scenario, the $CMST will continue to accrue in this module and eventually exceed the Surplus Threshold, the $CMST will be taken from the collector module in fixed lot sizes and auctioned off for HARBOR tokens. The HARBOR tokens received by the protocol will be burned.
+        This module has a Surplus Threshold and a Debt Threshold. In the ideal scenario, the $CMST will continue to accrue in this module and eventually exceed the Surplus Threshold, the $CMST will be taken from the collector module and will be distributed to $veHARBOR holders.
       </p>
       <p>
         In the case of bad debt, the $CMST in this module will continue to deplete, eventually going below the Debt Threshold. In such a scenario, HARBOR will be auctioned in a reverse style auction for fixed lots of $CMST. The $CMST will be sent to the Collector module to replenish it, while new HARBOR tokens will be minted and given to the winning bidder.

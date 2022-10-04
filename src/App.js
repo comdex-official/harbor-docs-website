@@ -35,6 +35,9 @@ import Summary from "./containers/Summary";
 import Risk from "./containers/Risk";
 import Tokenomics from "./containers/Tokenomics";
 import Scrollbar from "react-scrollbars-custom";
+import Emissions from "./containers/Emissions";
+import VaultVoting from "./containers/Vault_Voting";
+import RewardAndIncentive from "./containers/Rewards_And_Incetives";
 
 const { Header, Content, Sider, Footer } = Layout;
 
@@ -88,39 +91,42 @@ const App = () => {
 							>
 								<SideBar />
 							</Sider>
-							
-								<Content className="right-content-wrapper">
-									<div className="rightcontent-wrapperinner">
-										<Scrollbar style={{ height: 'calc(100vh - 205px)' }}>
-											<Switch>
-												<Route exact path="/" component={Home} />
-												<Route exact path="/introduction" component={Introduction} />
-												<Route exact path="/composite" component={Composite} />
-												<Route exact path="/harbor-protocol" component={HarborProtocol} />
-												<Route path="/Faq" component={Faq} />
-												<Route exact path="/use-cases" component={UseCases} />
-												<Route exact path="/vaults" component={Vaults} />
-												<Route exact path="/locker" component={Locker} />
-												<Route exact path="/collector" component={Collector} />
-												<Route exact path="/rewards" component={Rewards} />
-												<Route exact path="/liquidations" component={Liquidations} />
-												<Route exact path="/auctions" component={Auctions} />
-												<Route exact path="/governance" component={Governance} />
-												<Route exact path="/stable-mint" component={StableMint} />
-												<Route exact path="/price-oracles" component={PriceOracles} />
-												<Route exact path="/emergency-shutdown" component={EmergencyShutdown} />
-												<Route exact path="/mintburn" component={Mintburn} />
-												<Route exact path="/summary" component={Summary} />
-												<Route exact path="/risk" component={Risk} />
-												<Route exact path="/tokenomics" component={Tokenomics} />
-												<Route path="/glossary" component={Glossary} />
-											</Switch>
-										</Scrollbar>
-									</div>
-									<Footer className="main-footer">
-										© 2021 Harbor All rights reserved.
-									</Footer>
-								</Content>
+
+							<Content className="right-content-wrapper">
+								<div className="rightcontent-wrapperinner">
+									<Scrollbar style={{ height: 'calc(100vh - 205px)' }}>
+										<Switch>
+											<Route exact path="/" component={Home} />
+											<Route exact path="/introduction" component={Introduction} />
+											<Route exact path="/composite" component={Composite} />
+											<Route exact path="/harbor-protocol" component={HarborProtocol} />
+											<Route exact path="/emissions" component={Emissions} />
+											<Route exact path="/vault-voting" component={VaultVoting} />
+											<Route exact path="/reward-incentive" component={RewardAndIncentive} />
+											<Route path="/Faq" component={Faq} />
+											<Route exact path="/use-cases" component={UseCases} />
+											<Route exact path="/vaults" component={Vaults} />
+											<Route exact path="/locker" component={Locker} />
+											<Route exact path="/collector" component={Collector} />
+											<Route exact path="/rewards" component={Rewards} />
+											<Route exact path="/liquidations" component={Liquidations} />
+											<Route exact path="/auctions" component={Auctions} />
+											<Route exact path="/governance" component={Governance} />
+											<Route exact path="/stable-mint" component={StableMint} />
+											<Route exact path="/price-oracles" component={PriceOracles} />
+											<Route exact path="/emergency-shutdown" component={EmergencyShutdown} />
+											<Route exact path="/mintburn" component={Mintburn} />
+											<Route exact path="/summary" component={Summary} />
+											<Route exact path="/risk" component={Risk} />
+											<Route exact path="/tokenomics" component={Tokenomics} />
+											<Route path="/glossary" component={Glossary} />
+										</Switch>
+									</Scrollbar>
+								</div>
+								<Footer className="main-footer">
+									© 2022 Harbor All rights reserved.
+								</Footer>
+							</Content>
 						</>
 					</Layout>
 				</Layout>

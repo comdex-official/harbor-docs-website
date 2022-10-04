@@ -31,7 +31,7 @@ const Risk = () => {
 
       <BottomNav 
         preNavLink="mintburn"
-        prevNavText="Mintburn"
+        prevNavText="Tokenmint"
         nextNavLink="tokenomics"
         nextNavText="Tokenomics"
       />

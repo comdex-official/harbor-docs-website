@@ -9,8 +9,8 @@ const Glossary = () => {
       <p>Coming Soon... </p>
 
       <BottomNav 
-        preNavLink="tokenomics"
-        prevNavText="Tokenomics"
+        preNavLink="Faq"
+        prevNavText="FAQs"
       />
 
     </div>

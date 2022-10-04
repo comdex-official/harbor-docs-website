@@ -30,22 +30,47 @@ const SideBar = () => {
                 Composite
               </NavLink>
             </Menu.Item>
-            <Menu.Item key="m3" icon={<SvgIcon name="protocol-icon" viewbox="0 0 36 31.5" />}>
-              <NavLink
-                to="/harbor-protocol"
-                className={location.pathname === "/harbor-protocol" ? "selected" : ""}
-              >
-                Harbor Protocol
-              </NavLink>
-            </Menu.Item>
-            <Menu.Item key="m4" icon={<SvgIcon name="faq-icon" viewbox="0 0 33.846 33.846" />}>
-              <NavLink
-                to="/Faq"
-                className={location.pathname === "/Faq" ? "selected" : ""}
-              >
-                FAQs
-              </NavLink>
-            </Menu.Item>
+
+            <Menu.SubMenu key="m3" title="Harbor Protocol Overview" icon={<SvgIcon name="protocol-icon" viewbox="0 0 36 36" />}>
+              <Menu.Item key="m3" icon={<SvgIcon name="protocol-icon" viewbox="0 0 36 31.5" />}>
+                <NavLink
+                  to="/harbor-protocol"
+                  className={location.pathname === "/harbor-protocol" ? "selected" : ""}
+                >
+                  Introducing Harbor
+                </NavLink>
+              </Menu.Item>
+
+              <Menu.Item key="m3-1" icon={<SvgIcon name="emmision-icon" viewbox="0 0 36 31.5" />}>
+                <NavLink
+                  to="/emissions"
+                  className={location.pathname === "/emissions" ? "selected" : ""}
+                >
+                  Emissions
+                </NavLink>
+              </Menu.Item>
+
+              <Menu.Item key="m3-2" icon={<SvgIcon name="vaults-icon" viewbox="0 0 36 31.5" />}>
+                <NavLink
+                  to="/vault-voting"
+                  className={location.pathname === "/vault-voting" ? "selected" : ""}
+                >
+                  Vault voting
+                </NavLink>
+              </Menu.Item>
+
+              <Menu.Item key="m3-3" icon={<SvgIcon name="reward-icon" viewbox="0 0 36 31.5" />}>
+                <NavLink
+                  to="/reward-incentive"
+                  className={location.pathname === "/reward-incentive" ? "selected" : ""}
+                >
+                  Rewards and incentives
+                </NavLink>
+              </Menu.Item>
+
+            </Menu.SubMenu>
+
+
             <Menu.Item key="m5" icon={<SvgIcon name="usecase-icon" viewbox="0 0 25.567 31.198" />}>
               <NavLink
                 to="/use-cases"
@@ -140,11 +165,11 @@ const SideBar = () => {
                   to="/mintburn"
                   className={location.pathname === "/mintburn" ? "selected" : ""}
                 >
-                  Mintburn
+                  Tokenmint
                 </NavLink>
               </Menu.Item>
             </Menu.SubMenu>
-            
+
             <Menu.Item key="m8" icon={<SvgIcon name="risk-icon" viewbox="0 0 30 28.451" />}>
               <NavLink
                 to="/risk"
@@ -159,6 +184,14 @@ const SideBar = () => {
                 className={location.pathname === "/tokenomics" ? "selected" : ""}
               >
                 Tokenomics
+              </NavLink>
+            </Menu.Item>
+            <Menu.Item key="m4" icon={<SvgIcon name="faq-icon" viewbox="0 0 33.846 33.846" />}>
+              <NavLink
+                to="/Faq"
+                className={location.pathname === "/Faq" ? "selected" : ""}
+              >
+                FAQs
               </NavLink>
             </Menu.Item>
             <Menu.Item key="m10" icon={<SvgIcon name="glossary-icon" viewbox="0 0 32 29" />}>
