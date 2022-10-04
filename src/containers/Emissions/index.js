@@ -32,8 +32,6 @@ const Emissions = () => {
                 <p>
                     <b>$veHARBOR locked ratio</b> = Total $veHARBOR supply / (circulating harbor + total $veHARBOR supply)
                 </p>
-                <p>Sheet with different $veHARBOR locked ratio simulations:</p>
-                <a href="https://docs.google.com/spreadsheets/d/1_8SVWjI7h_YS5MDKb-IQ27sPX8aEBqUR7-cssNoS5AM/edit#gid=0 " target="_blank">https://docs.google.com/spreadsheets/d/1_8SVWjI7h_YS5MDKb-IQ27sPX8aEBqUR7-cssNoS5AM/edit#gid=0 </a>
                 <p>
                     The amount of $HARBOR locked as $veHARBOR and the inflation rate of $HARBOR emissions have an inverse relationship. For instance, if only 0% of the $HARBOR is locked, all emissions will go to the vault owners, but if 100% of the $HARBOR is locked, emissions will completely go to $veHARBOR lockers.
                 </p>

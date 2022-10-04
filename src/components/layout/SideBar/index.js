@@ -31,13 +31,13 @@ const SideBar = () => {
               </NavLink>
             </Menu.Item>
 
-            <Menu.SubMenu key="m3" title="Harbor" icon={<SvgIcon name="protocol-icon" viewbox="0 0 36 36" />}>
+            <Menu.SubMenu key="m3" title="Harbor Protocol Overview" icon={<SvgIcon name="protocol-icon" viewbox="0 0 36 36" />}>
               <Menu.Item key="m3" icon={<SvgIcon name="protocol-icon" viewbox="0 0 36 31.5" />}>
                 <NavLink
                   to="/harbor-protocol"
                   className={location.pathname === "/harbor-protocol" ? "selected" : ""}
                 >
-                  Harbor Protocol
+                  Introducing Harbor
                 </NavLink>
               </Menu.Item>
 
