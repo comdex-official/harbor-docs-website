@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { BottomNav } from "../../components/common";
 import "./index.less";
 
 const EmergencyShutdown = () => {
@@ -12,6 +12,14 @@ const EmergencyShutdown = () => {
       <p>
       In certain cases, if need be, the protocol will calculate how much collateral must stay in each CDP to cover the outstanding $CMST generated for each. Outstanding $CMST is valued at par ( i.e., $1 USD per $CMST). Subsequently, CDP owners are allowed to withdraw all excess collateral from the CDP.  The remaining collateral is collected for each asset type is collected together and $CMST holders will then be given the opportunity to redeem their $CMST for the assets being auctioned off.
       </p>
+
+      <BottomNav 
+        preNavLink="price-oracles"
+        prevNavText="Price Oracles"
+        nextNavLink="mintburn"
+        nextNavText="Mintburn"
+      />
+
     </div>
   );
 };

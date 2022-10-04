@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { BottomNav } from "../../components/common";
 import "./index.less";
 
 import liquidationImg from '../../assets/images/liquidation2.jpeg';
@@ -17,6 +17,14 @@ const Liquidations = () => {
         <img className="my-2" src={liquidationImg} alt="Liquidations" /> 
         Until the auction is completed and the collateral ratio is restored for a vault, the vault is locked and a user cannot access it.  
       </p>
+
+      <BottomNav 
+        preNavLink="rewards"
+        prevNavText="Rewards"
+        nextNavLink="auctions"
+        nextNavText="Auctions"
+      />
+
     </div>
   );
 };

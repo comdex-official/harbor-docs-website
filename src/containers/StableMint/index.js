@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { BottomNav } from "../../components/common";
 import "./index.less";
 
 const StableMint = () => {
@@ -13,6 +13,14 @@ const StableMint = () => {
         Users can directly call the “deposit stablemint” or “withdraw stablemint” function in the vault module to be able to access this feature. <br />
         The trades in stablemint are limited by $CMST ceiling and the number of other stablecoins which have been deposited. A user cannot swap for more $CMST once the $CMST ceiling has been reached. Similarly, a user cannot swap $CMST for other stablecoins if no collateral stablecoins exist in the stablemint.
       </p>
+
+      <BottomNav 
+        preNavLink="governance"
+        prevNavText="Governance"
+        nextNavLink="price-oracles"
+        nextNavText="Price Oracles"
+      />
+
     </div>
   );
 };

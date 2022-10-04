@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { BottomNav } from "../../components/common";
 import "./index.less";
 
 const Collector = () => {
@@ -29,8 +29,15 @@ const Collector = () => {
       </p>
       <p>
         In the case of bad debt, the $CMST in this module will continue to deplete, eventually going below the Debt Threshold. In such a scenario, HARBOR will be auctioned in a reverse style auction for fixed lots of $CMST. The $CMST will be sent to the Collector module to replenish it, while new HARBOR tokens will be minted and given to the winning bidder.
-
       </p>
+
+      <BottomNav 
+        preNavLink="locker"
+        prevNavText="Locker"
+        nextNavLink="rewards"
+        nextNavText="Rewards"
+      />
+
     </div>
   );
 };
