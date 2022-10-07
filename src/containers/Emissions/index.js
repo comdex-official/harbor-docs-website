@@ -7,10 +7,10 @@ const Emissions = () => {
             <div>
                 <h3>Emissions</h3>
                 <p>
-                    In order to encourage $CMST adoption, 70% of the total supply will be handed to users in the form of various incentives. These 700 million tokens would be distributed over the course of roughly six years.
+                    In order to encourage $CMST adoption, 55% of the total supply will be handed to users in the form of various incentives. These 550 million tokens would be distributed over the course of roughly six years.
                 </p>
                 <p>
-                    Emissions will start at 2% of the total 700M allocated that make it 14M for the first week. For the subsequent week the remaining 686M (700M - 14M emissions from previous week) will be used and 2% of 686M will be emitted which makes the next week's emissions to 13,720,000.
+                    Emissions will start at 2% of the total 550M allocated that make it 11M for the first week. For the subsequent week the remaining 539M (550M - 11M emissions from previous week) will be used and 2% of 539M will be emitted which makes the next week's emissions to 10,780,000.
                 </p>
                 <p>
                     The amount of $HARBOR tokens locked in comparison to the circulating supply has a direct impact on the rate of emissions and reward distribution. However, regardless of the quantity of $HARBOR locked up, the long-term outlook is for emissions to decrease in the future.
