@@ -202,6 +202,14 @@ const SideBar = () => {
                 Glossary
               </NavLink>
             </Menu.Item>
+            <Menu.Item key="m11" icon={<SvgIcon name="contracts-icon" viewbox="0 0 28.5 24.429" />}>
+              <NavLink
+                to="/security-docs"
+                className={location.pathname === "/security-docs" ? "selected" : ""}
+              >
+                Security and Developer Docs
+              </NavLink>
+            </Menu.Item>
           </Menu>
           <div className="social-footer">
             <Link to={{ pathname: "https://twitter.com/Harbor_Protocol" }} target="_blank">
