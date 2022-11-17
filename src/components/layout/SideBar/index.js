@@ -55,7 +55,7 @@ const SideBar = () => {
                   to="/vault-voting"
                   className={location.pathname === "/vault-voting" ? "selected" : ""}
                 >
-                  Vault voting
+                  Voting
                 </NavLink>
               </Menu.Item>
 
