@@ -36,7 +36,7 @@ import Risk from "./containers/Risk";
 import Tokenomics from "./containers/Tokenomics";
 import Scrollbar from "react-scrollbars-custom";
 import Emissions from "./containers/Emissions";
-import VaultVoting from "./containers/Vault_Voting";
+import VaultVoting from "./containers/Voting";
 import RewardAndIncentive from "./containers/Rewards_And_Incetives";
 
 const { Header, Content, Sider, Footer } = Layout;
@@ -81,9 +81,9 @@ const App = () => {
 					<Layout className="main-content">
 						<>
 							<Sider
-								width={380}
+								width={360}
 								breakpoint="lg"
-      							collapsedWidth="80"
+								collapsedWidth="80"
 								theme="light"
 								className="Harbor-sider"
 								collapsed={isOpen}
