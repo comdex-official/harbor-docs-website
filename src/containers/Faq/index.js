@@ -6,7 +6,7 @@ import "./index.less";
 const Faq = () => {
   return (
     <div>
-      
+
       <h3>What is Composite?</h3>
       <p>
         Composite ($CMST) is an IBC-native fully-collateralized stablecoin designed to represent purchasing power and is therefore soft pegged to $1; however, as the global macro landscape develops, that may be subject to change in the future.
@@ -22,10 +22,10 @@ const Faq = () => {
         $HARBOR is the governance and recapitalization token for the Harbor protocol. <br />
         People holding $HARBOR token can take part in the crucial decision-making process of the protocol that includes setting - stability fees, earning interest rates, liquidation ratios, liquidation fees, risk management parameters, or submitting proposals to implement platform changes.
       </p>
-      
+
       <h3>How do I interact with Harbor protocol?</h3>
       <p>
-        You can interact with Harbor protocol by visiting <br /> <Link to={{ pathname: "https://harborprotocol.one" }} target="_blank">https://harborprotocol.one</Link>. 
+        You can interact with Harbor protocol by visiting <br /> <Link to={{ pathname: "https://harborprotocol.one" }} target="_blank">https://harborprotocol.one</Link>.
       </p>
 
       <h3>Why mint on Harbor?</h3>
@@ -124,8 +124,12 @@ const Faq = () => {
       <p>
         Collateral ratio is ratio of the value of asset locked and the amount of $CMST due for a Vault. This parameter helps evaluate the risk and also is used as a parameter to trigger liquidations when collateral ratio falls below safety levels.
       </p>
-      
-      <BottomNav 
+      <h3>What is Kill Switch?</h3>
+      <p>
+        The Kill switch is one of the most important mechanisms in Harbor protocol. It is another safety feature on the Harbor protocol to ensure the smooth functioning of the protocol and prevent any mishaps in case of attacks or oracle failure. This means that any transaction or any action on the protocol like Mint, Deposit, Withdraw, etc can be stopped using the Kill switch. Currently, the Comdex treasury is the admin of the Kill Switch which will in later stages be decided via the governance.
+      </p>
+
+      <BottomNav
         preNavLink="tokenomics"
         prevNavText="Tokenomics"
         nextNavLink="glossary"
