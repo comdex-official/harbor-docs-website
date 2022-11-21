@@ -1,7 +1,7 @@
 import React from 'react'
 import incentiveMatrix from '../../assets/images/Harbor_protol_01.png';
 import { BottomNav } from '../../components/common';
-
+import './index.less'
 const RewardAndIncentive = () => {
     return (
         <div>
@@ -24,7 +24,7 @@ const RewardAndIncentive = () => {
                     <br />
                     <br />
                     <p>
-                        <img src={incentiveMatrix} alt="Incentive Matrix" />
+                        <img src={incentiveMatrix} alt="Incentive Matrix" className='reward-incentive-matrix-image' />
                     </p>
                 </li>
             </ol>
