@@ -128,22 +128,6 @@ const SideBar = () => {
                   Auctions
                 </NavLink>
               </Menu.Item>
-              <Menu.Item key="m6-7" icon={<SvgIcon name="governance-icon" viewbox="0 0 32.076 28.288" />}>
-                <NavLink
-                  to="/governance"
-                  className={location.pathname === "/governance" ? "selected" : ""}
-                >
-                  Governance
-                </NavLink>
-              </Menu.Item>
-              <Menu.Item key="m6-8" icon={<SvgIcon name="mint-icon" viewbox="0 0 30 30" />}>
-                <NavLink
-                  to="/stable-mint"
-                  className={location.pathname === "/stable-mint" ? "selected" : ""}
-                >
-                  StableMint
-                </NavLink>
-              </Menu.Item>
               <Menu.Item key="m6-9" icon={<SvgIcon name="priceoracles-icon" viewbox="0 0 26.028 19.28" />}>
                 <NavLink
                   to="/price-oracles"
@@ -186,6 +170,17 @@ const SideBar = () => {
                 Tokenomics
               </NavLink>
             </Menu.Item>
+
+            <Menu.Item key="m6-7" icon={<SvgIcon name="governance-icon" viewbox="0 0 32.584 26.527" />}>
+              <NavLink
+                to="/governance"
+                className={location.pathname === "/tokenomics" ? "selected" : ""}
+              >
+                Governance
+              </NavLink>
+            </Menu.Item>
+
+
             <Menu.Item key="m4" icon={<SvgIcon name="faq-icon" viewbox="0 0 33.846 33.846" />}>
               <NavLink
                 to="/Faq"

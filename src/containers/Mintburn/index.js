@@ -9,6 +9,9 @@ const Mintburn = () => {
       <p>
         In the tokenmint module, when the system reaches a debt threshold, it mints HARBOR token for $CMST. This has been discussed in detail in the Auction module.
       </p>
+      <p>
+        Tokenmint is also used to mint the genesis supply of Harbor tokens. 
+      </p>
 
       <BottomNav 
         preNavLink="emergency-shutdown"

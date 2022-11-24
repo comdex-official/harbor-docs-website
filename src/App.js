@@ -113,7 +113,6 @@ const App = () => {
 											<Route exact path="/liquidations" component={Liquidations} />
 											<Route exact path="/auctions" component={Auctions} />
 											<Route exact path="/governance" component={Governance} />
-											<Route exact path="/stable-mint" component={StableMint} />
 											<Route exact path="/price-oracles" component={PriceOracles} />
 											<Route exact path="/emergency-shutdown" component={EmergencyShutdown} />
 											<Route exact path="/mintburn" component={Mintburn} />

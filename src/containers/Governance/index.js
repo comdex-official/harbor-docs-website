@@ -7,64 +7,32 @@ const Governance = () => {
     <div>
       <h2>Governance</h2>
       <p>
-        The HARBOR governance system and selection of the Locker Savings Rate (LSR) is a multi-step process that begins with the Harbor Protocol issuing a poll to HARBOR token holders. The poll is used to gather opinions on a number of risk parameters including the LSR. Once a poll has closed (after a couple of days), it can be used to influence a subsequent “Executive Vote” that, once passed by HARBOR token holders, implements the changes voted on.
+        $HARBOR protocols governance and tokenomics model adheres to ve (3,3). Holders of $HARBOR tokens have the option to lock their tokens for up to four months in exchange for veHARBOR, it gives increased voting power to determine which vault receives the most veHARBOR emissions for borrowing $CMST. $HARBOR protocol's governance will become increasingly decentralised and diverse. veHARBOR will be used to confer voting power. The success of decentralised governance depends on the alignment of governance token holders and system stakeholders. People who lock their $HARBOR tokens are the people who interact with the protocol in some way, are invested in its future growth, and want a say in how it is governed.      </p>
+      <p>
+        veHARBOR token holders are the primary stakeholders of the protocol. Every unit of the veHARBOR token entitles its holder to 1 vote, which is cast in governance polls that any veHARBOR owner can initiate.
       </p>
       <p>
-        Total proposals: 12+1(for ESM)
+        It is the responsibility of veHARBOR holders and the community to govern the system with competence to ensure a healthy overcollateralized system with minimum bad debt.
       </p>
       <ul>
         <li>
-          Create Pairs and Parameters for collateral Asset and CMST (Extended Pair vault)
-        </li>
-        <li>
-          Update Pairs and parameters for collateral Asset and CMST
-        </li>
-        <li>
-          Collector 
-          <div>
-            <div className="pl-2">Create</div>
-            <ol>
-              <li>Asset Pair</li>
-              <li>Threshold ( upper and lower)</li>
-              <li>LSR</li>
-              <li>Lot size</li>
-              <li>Bid factor</li>
+          Some of the decisions a veHARBOR token holder can initiate a poll for and vote on are (Note:-Not an exhaustive list):
+            <ol type="A">
+              <li>Whitelisting/Blacklisting an asset to be used as collateral</li>
+              <li>Whitelisting/Blacklisting an asset to be used for StableMint</li>
+              <li>Choose the oracles for a given asset</li>
+              <li>Modifying debt and earning interest rates for an asset class</li>
+              <li>Updating the liquidation penalty protocol wide</li>
+              <li>Modifying the debt floor and debt ceiling per asset class</li>
             </ol>
-          </div>
         </li>
-        <li>
-          Collector 
-          <div>
-            <div className="pl-2">Change</div>
-            <ol>
-              <li>LSR</li>
-              <li>Threshold (upper and lower)- to be updated</li>
-              <li>Lot size</li>
-              <li>Bid factor</li>
-            </ol>
-          </div>
-        </li>
-        <li>
-          Locker- create
-          <ol >
-            <li>Asset whitelist</li>
-          </ol>
-        </li>
-        <li>Locker Rewards - Activate</li>
-        <li>Locker Rewards - Deactivate</li>
-        <li>Activate Liquidations throughout app</li>
-        <li>Deactivate Liquidations throughout app</li>
-        <li> Stabiity Fees - Activate throughout app</li>
-        <li>Stabiity Fees - DeActivate throughout app</li>
-        <li> Surplus/ Debt Auctions true or false per asset.</li>
-        <li>ESM-to do</li>
       </ul>
 
-      <BottomNav 
+      <BottomNav
         preNavLink="auctions"
         prevNavText="Auctions"
-        nextNavLink="stable-mint"
-        nextNavText="StableMint"
+        nextNavLink="price-oracles"
+        nextNavText="Price Oracles"
       />
 
     </div>
