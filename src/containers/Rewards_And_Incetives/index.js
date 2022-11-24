@@ -7,9 +7,9 @@ const RewardAndIncentive = () => {
         <div>
             <h3>Rewards and incentives</h3>
             <p>
-                Locking Harbor for veHarbor entitles you to earn protocol revenue after crossing the surplus threshold. The protocol generates revenue from the stability fees(interest collected on $CMST), drawdown fees, and liquidation fees. These incentives would be sent to veHarbor lockers in the form of $CMST.
+                Locking Harbor for veHarbor entitles you to earn protocol revenue after crossing the surplus threshold. The protocol generates revenue from the stability fees(interest collected on $CMST), drawdown fees, and liquidation fees. These incentives would be sent to veHarbor lockers in the form of $CMST. To stake Harbor for veHarbor, use the Stake page in the More section of the Harbor app.
             </p>
-            <h3>Incentives you earn for $veHARBOR lockers:</h3>
+            <h3>Incentives you earn for $veHARBOR Stakers:</h3>
             <ol>
                 <li>
                     Part of the interest and fees the protocol earns with the adoption of $CMST is redistributed to veHarbor holders.                </li>
@@ -19,16 +19,12 @@ const RewardAndIncentive = () => {
                     Protocols can incentivize the minting of $CMST through their tokens by providing external incentives to veHarbor holders. The external incentives work similar to the concept of ‘bribing’. External incentives can be added to whitelisted vaults and are distributed only to voters on that vault.                </li>
                 <li>
                     Voters can claim rewards after every week, proportional to their voting power.                </li>
-                <li>
-                    Harbor incentive matrix:
-                    <br />
-                    <br />
-                    <p>
-                        <img src={incentiveMatrix} alt="Incentive Matrix" className='reward-incentive-matrix-image' />
-                    </p>
-                </li>
             </ol>
-
+            <h3>Harbor Incentive Matrix:</h3>
+            <br />
+            <p>
+                <img src={incentiveMatrix} alt="Incentive Matrix" className='reward-incentive-matrix-image' />
+            </p>
             <BottomNav
                 preNavLink="vault-voting"
                 prevNavText="Vault voting"
