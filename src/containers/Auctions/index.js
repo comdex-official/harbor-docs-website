@@ -9,7 +9,7 @@ const Auctions = () => {
     <div>
       <h2>Auctions</h2>
       <p>
-        There are two types of auctions that will be taking place in the protocol which are Debt Auction and Collateral Auction.
+        There are three types of auctions that will be taking place in the protocol which are Debt Auction, Surplus Auction and Collateral Auction.
       </p>
       <h3>Debt Auction</h3>
       <p>
@@ -29,6 +29,17 @@ const Auctions = () => {
       </p>
       <p>
         For example, if the current bid is 1000 HARBOR or a price of 1000 $CMST/HARBOR, the next bid would need to be less than 1000 HARBOR. The mechanics of the auction is designed to make users bid at least 2% less than the previous bid, so in this example, the next possible bid would be a maximum of 980 HARBOR.
+      </p>
+
+      <h3>Surplus Auction</h3>
+      <p>
+        In Surplus auctions, the Harbor protocol auctions off excess CMST for HARBOR in order to reduce the CMST surplus that has built up in the Collector module primarily from drawdown, stability and liquidation fees.
+      </p>
+      <p>
+        The surplus auctions will be triggered automatically when the CMST in the collector module exceeds the upper ceiling by a certain level. The excess CMST will then be auctioned off using the English auction. Users bid an increasing amount of $HARBOR tokens in exchange for a fixed lot of $CMST. Once the auction is complete the $CMST is transferred to the users wallet and the $HARBOR collected is burned form the supply.
+      </p>
+      <p>
+        For example, if the current bid on a 1000 CMST is 10 HARBOR (a price of 100 CMST per HARBOR), then the next bid would need to be more than 10 HARBOR i.e 10.2 Harbor. The mechanics of the auction will require users to bid at least 2% more than the previous bid, so in this example, the next possible bid would be a minimum of 10.2 HARBOR.
       </p>
 
       <h3>Collateral Auction</h3>
@@ -62,7 +73,7 @@ const Auctions = () => {
         <b>$CMST sent to Collector = </b>$CMST collected from Auction - $CMST Burnt
       </p>
 
-      <BottomNav 
+      <BottomNav
         preNavLink="liquidations"
         prevNavText="Liquidations"
         nextNavLink="governance"

@@ -39,6 +39,7 @@ import Emissions from "./containers/Emissions";
 import VaultVoting from "./containers/Voting";
 import RewardAndIncentive from "./containers/Rewards_And_Incetives";
 import SecurityDeveloperDocs from "./containers/SecurityDeveloperDocs";
+import Rebase from "./containers/Rebase";
 
 const { Header, Content, Sider, Footer } = Layout;
 
@@ -102,6 +103,7 @@ const App = () => {
 											<Route exact path="/composite" component={Composite} />
 											<Route exact path="/harbor-protocol" component={HarborProtocol} />
 											<Route exact path="/emissions" component={Emissions} />
+											<Route exact path="/rebase" component={Rebase} />
 											<Route exact path="/vault-voting" component={VaultVoting} />
 											<Route exact path="/reward-incentive" component={RewardAndIncentive} />
 											<Route path="/Faq" component={Faq} />

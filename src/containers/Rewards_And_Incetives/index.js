@@ -5,20 +5,17 @@ import './index.less'
 const RewardAndIncentive = () => {
     return (
         <div>
-            <h3>Rewards and incentives</h3>
-            <p>
-                Locking Harbor for veHarbor entitles you to earn protocol revenue after crossing the surplus threshold. The protocol generates revenue from the stability fees(interest collected on $CMST), drawdown fees, and liquidation fees. These incentives would be sent to veHarbor lockers in the form of $CMST. To stake Harbor for veHarbor, use the Stake page in the More section of the Harbor app.
-            </p>
-            <h3>Incentives you earn for $veHARBOR Stakers:</h3>
+            <h3>Incentives for veHarbor holders:</h3>
             <ol>
                 <li>
-                    Part of the interest and fees the protocol earns with the adoption of $CMST is redistributed to veHarbor holders.                </li>
+                    The weekly rebase amount of veHarbor is distributed based on the veHarbor to Harbor ratio. The rebase amount in veHarbor is proportionally locked from the time received for the period chosen by the user at the start. In this way, your original position will stay undiluted with increasing emissions.
+                </li>
                 <li>
-                    The weekly rebase amount of veHarbor is distributed based on the veHarbor to Harbor ratio. The rebase amount in veHarbor is proportionally locked from the time received for the period chosen by the user at the start. In this way, your original position will stay undiluted with increasing emissions.                </li>
+                    Protocols can incentivize the minting of $CMST through their tokens by providing external incentives to veHarbor holders. The external incentives work similarly to the concept of ‘bribing’. External incentives can be added to whitelisted vaults and are distributed only to voters on that vault.
+                </li>
                 <li>
-                    Protocols can incentivize the minting of $CMST through their tokens by providing external incentives to veHarbor holders. The external incentives work similar to the concept of ‘bribing’. External incentives can be added to whitelisted vaults and are distributed only to voters on that vault.                </li>
-                <li>
-                    Voters can claim rewards after every week, proportional to their voting power.                </li>
+                    Voters can claim rewards after every week, proportional to their voting power.
+                </li>
             </ol>
             <h3>Harbor Incentive Matrix:</h3>
             <br />
