@@ -198,14 +198,14 @@ const SideBar = () => {
                 FAQs
               </NavLink>
             </Menu.Item>
-            <Menu.Item key="m10" icon={<SvgIcon name="glossary-icon" viewbox="0 0 32 29" />}>
+            {/* <Menu.Item key="m10" icon={<SvgIcon name="glossary-icon" viewbox="0 0 32 29" />}>
               <NavLink
                 to="/glossary"
                 className={location.pathname === "/glossary" ? "selected" : ""}
               >
                 Glossary
               </NavLink>
-            </Menu.Item>
+            </Menu.Item> */}
             <Menu.Item key="m11" icon={<SvgIcon name="contracts-icon" viewbox="0 0 28.5 24.429" />}>
               <NavLink
                 to="/security-docs"

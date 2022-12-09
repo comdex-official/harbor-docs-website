@@ -121,7 +121,7 @@ const App = () => {
 											<Route exact path="/summary" component={Summary} />
 											<Route exact path="/risk" component={Risk} />
 											<Route exact path="/tokenomics" component={Tokenomics} />
-											<Route path="/glossary" component={Glossary} />
+											{/* <Route path="/glossary" component={Glossary} /> */}
 											<Route path="/security-docs" component={SecurityDeveloperDocs} />
 										</Switch>
 									</Scrollbar>

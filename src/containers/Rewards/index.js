@@ -27,7 +27,7 @@ const Rewards = () => {
         For the Vault: The sum of the total $CMST borrowed from the vault and the total stability fees due in the vault act as the principle in the rewards formula to calculate the stability fees generated in the next block. The interest that is accrued is sent back to locker module to add to the outstanding Stability fees on borrowed debt. For the next block, the $CMST borrowed and the new stability fee value acts as the principle.
       </p>
       <p>
-        Eg: <br />
+        Eg:
         If the Stability Fee rate is set to 10%, the value will compound per block in such a way that at the end of the year the stability fee will be exactly 10 of the principle%.
       </p>
       <p>
@@ -37,14 +37,14 @@ const Rewards = () => {
         For the Locker: The sum of the total $CMST deposited in the locker and the total LSR accrued in the locker act as the principle in the rewards formula to calculate the LSR generated in the next block. This interest is sent back to the locker to add to the total LSR earned, and the new sum is used to calculate the LSR in the next block.
       </p>
       <p>
-        Eg: <br />
+        Eg:
         If the Locker savings rate is set to 5%, the value will compound per block in such a way that at the end of the year the LSR interest will be exactly 5% of the principle.
       </p>
       <p>
-        Assuming a user deposits 100 $CMST, at the end of 1st year they will have 105 $CMST ( 100 $CMST Principle and 5 $CMST Interest) in their locker, and at the end of 2nd year, they will have 110.25 $CMST ( 100 $CMST Principle and 10.25 $CMST Interest). 
+        Assuming a user deposits 100 $CMST, at the end of 1st year they will have 105 $CMST ( 100 $CMST Principle and 5 $CMST Interest) in their locker, and at the end of 2nd year, they will have 110.25 $CMST ( 100 $CMST Principle and 10.25 $CMST Interest).
       </p>
 
-      <BottomNav 
+      <BottomNav
         preNavLink="collector"
         prevNavText="Collector"
         nextNavLink="liquidations"

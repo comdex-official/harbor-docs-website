@@ -59,10 +59,11 @@ const UseCases = () => {
           The stablemint feature will have some basic transaction fee which will be a percentage of the transaction of the value being traded.
         </li>
         <li>
-          Users can also partake in two types of auctions:
+          Users can also partake in three types of auctions:
           <ol type="a">
-            <li>Collateral Auctions,</li>
+            <li>Collateral Auctions</li>
             <li>Debt Auctions</li>
+            <li>Surplus Auctions</li>
           </ol>
         </li>
       </ul>

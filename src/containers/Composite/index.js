@@ -48,7 +48,7 @@ This would increase the supply of $CMST and stabilize the peg. <br /> <br />
             If over time, the trend continues, then the Stability rates and the LSR will be increased via governance by $HARBOR token holders. <br />
             Now this will disincentivize users to mint more $CMST and will incentivize users to lock up $CMST in Locker. Users with existing $CMST debt will also close their existing postings by buying $CMST from the markets. <br />
             This would decrease the supply of $CMST and stabilize the peg.  <br /> <br />
-            It is important to note that the monetary policy has a slow burner effect and it takes time for the policy changes to repeg $CMST. 
+            It is important to note that the monetary policy has a slow burn effect and it takes time for the policy changes to repeg $CMST. 
           </div>
         </li>
       </ul>
