@@ -14,8 +14,8 @@ const VaultVoting = () => {
 
 
             <BottomNav
-                preNavLink="emissions"
-                prevNavText=" Emissions"
+                preNavLink="rebase"
+                prevNavText=" Rebase"
                 nextNavLink="reward-incentive"
                 nextNavText="Rewards and incentives"
             />

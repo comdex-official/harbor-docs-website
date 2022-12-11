@@ -100,8 +100,8 @@ const Tokenomics = () => {
       <BottomNav
         preNavLink="risk"
         prevNavText="Risk"
-        nextNavLink="Faq"
-        nextNavText="FAQs"
+        nextNavLink="governance"
+        nextNavText="Governance"
       />
     </div>
   );

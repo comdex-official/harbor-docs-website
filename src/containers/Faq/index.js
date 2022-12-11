@@ -135,10 +135,10 @@ const Faq = () => {
       </p>
 
       <BottomNav
-        preNavLink="tokenomics"
-        prevNavText="Tokenomics"
-        nextNavLink="glossary"
-        nextNavText=" Glossary"
+        preNavLink="governance"
+        prevNavText="Governance"
+        nextNavLink="security-docs"
+        nextNavText="   Security and Developer Docs"
       />
 
     </div>

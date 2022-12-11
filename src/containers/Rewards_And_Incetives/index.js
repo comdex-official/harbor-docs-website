@@ -24,7 +24,7 @@ const RewardAndIncentive = () => {
             </p>
             <BottomNav
                 preNavLink="vault-voting"
-                prevNavText="Vault voting"
+                prevNavText=" Voting"
                 nextNavLink="use-cases"
                 nextNavText="Use Cases"
             />

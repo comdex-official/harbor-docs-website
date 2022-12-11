@@ -76,8 +76,8 @@ const Auctions = () => {
       <BottomNav
         preNavLink="liquidations"
         prevNavText="Liquidations"
-        nextNavLink="governance"
-        nextNavText="Governance"
+        nextNavLink="price-oracles"
+        nextNavText=" Price Oracles"
       />
 
     </div>

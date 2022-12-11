@@ -29,10 +29,10 @@ const Governance = () => {
       </ul>
 
       <BottomNav
-        preNavLink="auctions"
-        prevNavText="Auctions"
-        nextNavLink="price-oracles"
-        nextNavText="Price Oracles"
+        preNavLink="tokenomics"
+        prevNavText="Tokenomics"
+        nextNavLink="Faq"
+        nextNavText="Faq"
       />
 
     </div>
