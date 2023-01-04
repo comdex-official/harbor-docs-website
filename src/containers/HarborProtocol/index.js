@@ -24,7 +24,7 @@ const HarborProtocol = () => {
       </p>
 
       <p>
-        Inversely, if the system is in a healthy state and if the surplus is growing at a steady-state and crosses above the surplus limits, then this is distributed to $veHARBOR token holders.
+        Inversely, if the system is in a healthy state and if the surplus is growing at a steady-state and crosses above the surplus limits, the protocol buys back and burns Harbor tokens from the supply via Surplus auctions.
       </p>
 
       <p>

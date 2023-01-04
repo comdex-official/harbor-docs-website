@@ -129,11 +129,16 @@ const Faq = () => {
         The Kill switch is one of the most important mechanisms in Harbor protocol. It is another safety feature on the Harbor protocol to ensure the smooth functioning of the protocol and prevent any mishaps in case of attacks or oracle failure. This means that any transaction or any action on the protocol like Mint, Deposit, Withdraw, etc can be stopped using the Kill switch. Currently, the Comdex treasury is the admin of the Kill Switch which will in later stages be decided via the governance.
       </p>
 
+      <h3>What are Surplus auctions?</h3>
+      <p>
+        In Surplus auctions, the Harbor protocol auctions off excess CMST for HARBOR in order to reduce the CMST surplus that has built up in the Collector module primarily from stability and liquidation fees.
+      </p>
+
       <BottomNav
-        preNavLink="tokenomics"
-        prevNavText="Tokenomics"
-        nextNavLink="glossary"
-        nextNavText=" Glossary"
+        preNavLink="governance"
+        prevNavText="Governance"
+        nextNavLink="security-docs"
+        nextNavText="   Security and Developer Docs"
       />
 
     </div>

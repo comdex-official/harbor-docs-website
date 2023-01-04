@@ -12,7 +12,7 @@ const Locker = () => {
       <p>
         Locker Stability Rate ( LSR) is the term used to define the interest rate applied in the Locker module. This interest rate is also compounded per block ( just like the stability fee) and added back per block to the principal in the user’s locker. This sum now becomes the principal for the next block. To estimate the calculations easily, LSR should be calculated annually as per the equation and example below. The calculation of the interest earned per block is computed with the Rewards module. <br />
       </p>
-      <p>Eg:<br />
+      <p>
         Locker’s primary goal is to maintain $CMST’s peg. The Locker Savings Rate will be used used in tandem with the Stability Fee to balance the supply and demand of $CMST as it incentivizes users to reduce the supply of $CMST by locking it in the locker module.
       </p>
       <p>

@@ -11,8 +11,8 @@ const PriceOracles = () => {
       </p>
 
       <BottomNav
-        preNavLink="governance"
-        prevNavText="Governance"
+        preNavLink="auctions"
+        prevNavText="Auctions"
         nextNavLink="emergency-shutdown"
         nextNavText="Emergency Shutdown"
       />

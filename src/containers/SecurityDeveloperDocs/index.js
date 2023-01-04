@@ -4,7 +4,7 @@ import "./index.less";
 
 const SecurityDeveloperDocs = () => {
   return (
-    <div>
+    <div id="content-start">
       <h2>Security and Developer Docs</h2>
       <h3>1. Asset Module: x/asset</h3>
       <h4>Abstract</h4>
@@ -144,7 +144,7 @@ const SecurityDeveloperDocs = () => {
       <p>A liquidation event is triggered when the collateralization ratio of the position falls below the minimum threshold value (Liquidation Ratio) for a cAsset.</p>
       <p>Collateralization Ratio = (Value of collaterals locked up)/(Value of borrowed assets)</p>
       <p>The Module also offers Stable Mint functionality which is a global common vault for all users where the users can deposit / withdraw collateral for a  borrowed asset at 1 : 1 ratio. </p>
-      
+
       <h4>STATE:</h4>
       <ol type="a">
         <li>
@@ -247,9 +247,9 @@ message ExtendedPairVaultMapping
             <li>Users can create a vault for an app and extended_pair_vault_ id with an initial amount_in (collateral) and amount_out(debt) .</li>
             <li>Collateralization ratio should be greater than min_cr( defined for the extended_pair_vault_id).</li>
             <li>Draw_down fee on the debt is sent to the collector and remaining debt is sent to the vault owner. <br />
-            Eg: If amount_out is 1000000 and draw_down_fee (defined in ExtendedPairVault) is 1%
-then 990000 will be given to the vault owner and 10000 will be collected in the collector module.
-</li>
+              Eg: If amount_out is 1000000 and draw_down_fee (defined in ExtendedPairVault) is 1%
+              then 990000 will be given to the vault owner and 10000 will be collected in the collector module.
+            </li>
           </ol>
         </li>
         <li>
@@ -322,10 +322,10 @@ then 990000 will be given to the vault owner and 10000 will be collected in the 
             <li>amount:  borrowed asset amount to repay</li>
             <li>The difference between amount to be repaid and vault debt must be greater than the debt floor i.e
               <br />
-              For example , if debt_floor (defined in extended pair vault) = 2000000 
+              For example , if debt_floor (defined in extended pair vault) = 2000000
               <div className="pl-4">
                 amount _out+stability_fee_accumulated (vault debt) =5000000
-              Then maximum of 3000000 amount can only be repaid 
+                Then maximum of 3000000 amount can only be repaid
               </div>
             </li>
             <li>Amount repaid is then burned.</li>
@@ -396,20 +396,20 @@ then 990000 will be given to the vault owner and 10000 will be collected in the 
           </ol>
         </li>
       </ol>
-      
-    <h3>3. Collector Module: x/collector</h3>
-    <h4>ABSTRACT:</h4>
-    <p>
-      Collector module keeps track of protocol earning via penalty,opening/closing fee etc.Collector keeps track of app earning for each individual asset .Protocol can decide to use the excess fund for rewarding locker depositors or distribute the surplus to veHarbor holders and can also participate in debt auction if protocol is deficit of funds for an asset and app.
-    </p>
 
-    <h4>STATE:</h4>
+      <h3>3. Collector Module: x/collector</h3>
+      <h4>ABSTRACT:</h4>
+      <p>
+        Collector module keeps track of protocol earning via penalty,opening/closing fee etc.Collector keeps track of app earning for each individual asset .Protocol can decide to use the excess fund for rewarding locker depositors or distribute the surplus to veHarbor holders and can also participate in debt auction if protocol is deficit of funds for an asset and app.
+      </p>
 
-    <ol type="1">
-      <li>
-        <p><u>Track fee collector from various sources app and asset wise</u></p>
-        <pre>
-          {`message AppIdToAssetCollectorMapping {
+      <h4>STATE:</h4>
+
+      <ol type="1">
+        <li>
+          <p><u>Track fee collector from various sources app and asset wise</u></p>
+          <pre>
+            {`message AppIdToAssetCollectorMapping {
  uint64 app_id 
  repeated AssetIdCollectorMapping asset_collector 
 }
@@ -427,17 +427,17 @@ message CollectorData {
  string liquidation_rewards_collected 
 }
 `}
-        </pre>
-        <p>AppIdToAssetCollectorMapping</p>
-        <ol type="a">
-          <li>Keeps track on the different fees collected by protocol(historical data)</li>
-          <li>Asset_id in the mapping is also used as collector_asset_id in CollectorLookup below.</li>
-        </ol>
-      </li>
-      <li>
-        <p>Track net fee collected in by app and asset wise</p>
-        <pre>
-          {`message NetFeeCollectedData {
+          </pre>
+          <p>AppIdToAssetCollectorMapping</p>
+          <ol type="a">
+            <li>Keeps track on the different fees collected by protocol(historical data)</li>
+            <li>Asset_id in the mapping is also used as collector_asset_id in CollectorLookup below.</li>
+          </ol>
+        </li>
+        <li>
+          <p>Track net fee collected in by app and asset wise</p>
+          <pre>
+            {`message NetFeeCollectedData {
  uint64 app_id 
  repeated AssetIdToFeeCollected assetIdToFeeCollected 
 }
@@ -448,13 +448,13 @@ message AssetIdToFeeCollected {
  string net_fees_collected
 }
 `}
-        </pre>
-        <p> Tracks net fee collected by an asset id for an app.</p>
-      </li>
-      <li>
-        <p><u>Stores various params with app and asset wise</u></p>
-        <pre>
-          {`message CollectorLookup {
+          </pre>
+          <p> Tracks net fee collected by an asset id for an app.</p>
+        </li>
+        <li>
+          <p><u>Stores various params with app and asset wise</u></p>
+          <pre>
+            {`message CollectorLookup {
  uint64 app_id 
  repeated CollectorLookupTable asset_rate_info }
 
@@ -470,29 +470,29 @@ message CollectorLookupTable {
  uint64 debt_lot_size 
 }
 `}
-        </pre>
-        <p>CollectorLookupTable:</p>
-        <ol type="a">
-          <li>collector_asset_id:  The collector asset id </li>
-          <li>secondary _asset_id : A secondary asset_id minted through tokenmint module </li>
-          <li>surplus_Threshold: the maximum net_fee collected in order to trigger surplus auction(in terms of collector_asset_id)</li>
-          <li>debt_threshold: the minimum net_fee collected for collector_asset_id for which a debt auction can be triggered (in terms of collector_asset_id)</li>
-          <li>lot_size: the amount of collector_asset_id in auction (in terms of collector_asset_id)</li>
-          <li>debt_lot_size: starting amount of secondary_asset_id for debt auction</li>
-          <li>State is set via contract governance the wasm bindings</li>
-        </ol>
-      </li>
-      <li>
-        <p><u>Set Auction params app and asset wise</u></p>
-        <pre>
-          {`message CollectorAuctionLookupTable {
+          </pre>
+          <p>CollectorLookupTable:</p>
+          <ol type="a">
+            <li>collector_asset_id:  The collector asset id </li>
+            <li>secondary _asset_id : A secondary asset_id minted through tokenmint module </li>
+            <li>surplus_Threshold: the maximum net_fee collected in order to trigger surplus auction(in terms of collector_asset_id)</li>
+            <li>debt_threshold: the minimum net_fee collected for collector_asset_id for which a debt auction can be triggered (in terms of collector_asset_id)</li>
+            <li>lot_size: the amount of collector_asset_id in auction (in terms of collector_asset_id)</li>
+            <li>debt_lot_size: starting amount of secondary_asset_id for debt auction</li>
+            <li>State is set via contract governance the wasm bindings</li>
+          </ol>
+        </li>
+        <li>
+          <p><u>Set Auction params app and asset wise</u></p>
+          <pre>
+            {`message CollectorAuctionLookupTable {
  uint64 app_id 
  repeated AssetIdToAuctionLookupTable assetIdToAuctionLookup 
 }
 `}
-        </pre>
-        <pre>
-          {`message AssetIdToAuctionLookupTable {
+          </pre>
+          <pre>
+            {`message AssetIdToAuctionLookupTable {
  uint64 asset_id 
  bool is_surplus_auction 
  bool is_debt_auction 
@@ -501,29 +501,29 @@ message CollectorLookupTable {
  uint64 asset_out_price 
 }
 `}
-        </pre>
-        <p>CollectorAuctionLookupTable:</p>
-        <ol type="a">
-          <li>asset_id:  The collector_asset_id for which the auction lookup is defined</li>
-          <li>is_surplus_auction : boolean flag to check if surplus auction is enabled for the asset_id and app_id</li>
-          <li>is_debt_auction: boolean flag to check if debt auction is enabled for the asset_id and app_id</li>
-          <li>is_action_active: boolean flag to check if either surplus or debt auction is ongoing or not .</li>
-          <li>asset_out_oracle_price: boolean flag to check if price to consider from oracle or not (true if need consider from market oracles)</li>
-          <li>asset_out_price: price of asset_id if asset_out_oracle_price is false </li>
-          <li>State is set via contract governance the wasm bindings.</li>
-        </ol>
-      </li>
-    </ol>
+          </pre>
+          <p>CollectorAuctionLookupTable:</p>
+          <ol type="a">
+            <li>asset_id:  The collector_asset_id for which the auction lookup is defined</li>
+            <li>is_surplus_auction : boolean flag to check if surplus auction is enabled for the asset_id and app_id</li>
+            <li>is_debt_auction: boolean flag to check if debt auction is enabled for the asset_id and app_id</li>
+            <li>is_action_active: boolean flag to check if either surplus or debt auction is ongoing or not .</li>
+            <li>asset_out_oracle_price: boolean flag to check if price to consider from oracle or not (true if need consider from market oracles)</li>
+            <li>asset_out_price: price of asset_id if asset_out_oracle_price is false </li>
+            <li>State is set via contract governance the wasm bindings.</li>
+          </ol>
+        </li>
+      </ol>
 
-    <h3>4.  Locker Module: x/locker</h3>
-    <h4>ABSTRACT:</h4>
-    <p>Locker module enables the user to deposit a whitelisted asset for an app and earn rewards on it . The rewards comes from collector module and is distributed to the locker depositor per block basis for a fixed annual rate (locker_saving_rate , defined in collector lookup for an app_id and asset_id(collector_asset_id))</p>
+      <h3>4.  Locker Module: x/locker</h3>
+      <h4>ABSTRACT:</h4>
+      <p>Locker module enables the user to deposit a whitelisted asset for an app and earn rewards on it . The rewards comes from collector module and is distributed to the locker depositor per block basis for a fixed annual rate (locker_saving_rate , defined in collector lookup for an app_id and asset_id(collector_asset_id))</p>
 
-    <h4>STATE:</h4>
+      <h4>STATE:</h4>
 
-    <ol type="1">
-      <li>
-        <pre>{`message Locker {
+      <ol type="1">
+        <li>
+          <pre>{`message Locker {
  string locker_id 
  string depositor 
  string returns_accumulated 
@@ -533,18 +533,18 @@ message CollectorLookupTable {
  uint64 app_id
 }
 `}</pre>
-        <p>Locker:</p>
-        <ol type="a">
-          <li>locker_id: unique locker id for an app</li>
-          <li>depositor: locker owner address</li>
-          <li>returns_accumulated: total rewards accumulated from collector </li>
-          <li>net_balance: total balance in locker (including rewards)</li>
-          <li>asset_deposit_id: asset id for with locker deposit is eligible</li>
-          <li>is_locked: boolean flag to check </li>
-        </ol>
-      </li>
-      <li>
-        <pre>{`message UserLockerAssetMapping {
+          <p>Locker:</p>
+          <ol type="a">
+            <li>locker_id: unique locker id for an app</li>
+            <li>depositor: locker owner address</li>
+            <li>returns_accumulated: total rewards accumulated from collector </li>
+            <li>net_balance: total balance in locker (including rewards)</li>
+            <li>asset_deposit_id: asset id for with locker deposit is eligible</li>
+            <li>is_locked: boolean flag to check </li>
+          </ol>
+        </li>
+        <li>
+          <pre>{`message UserLockerAssetMapping {
  string owner 
  repeated LockerToAppMapping  locker_app_mapping
 }
@@ -564,15 +564,15 @@ message UserTxData{
  string balance 
 }
 `}</pre>
-        <p>UserLockerAssetMapping</p>
-        <ol type="a">
-          <li>owner: locker owner address</li>
-          <li>Keeps track of owner complete locker information across all apps including locker transaction history</li>
-        </ol>
-      </li>
-      <li>
-        <pre>
-          {`message LockerLookupTable {
+          <p>UserLockerAssetMapping</p>
+          <ol type="a">
+            <li>owner: locker owner address</li>
+            <li>Keeps track of owner complete locker information across all apps including locker transaction history</li>
+          </ol>
+        </li>
+        <li>
+          <pre>
+            {`message LockerLookupTable {
  uint64 app_id 
  repeated TokenToLockerMapping lockers 
  uint64 counter = 3;
@@ -583,60 +583,60 @@ repeated string locker_ids
  string deposited_amount 
 }
 `}
-        </pre>
-        <p>LockerLookupTable</p>
-        <ol type="a">
-          <li>Counter: global locker counter for lockers for an app</li>
-          <li>deposited_amount: total deposited amount for an asset_id in an app.</li>
-          <li>locker_ids: list of locker_ids for an asset_id and app_id</li>
-        </ol>
-      </li>
-      <li>
-        <pre>{`message LockerProductAssetMapping {
+          </pre>
+          <p>LockerLookupTable</p>
+          <ol type="a">
+            <li>Counter: global locker counter for lockers for an app</li>
+            <li>deposited_amount: total deposited amount for an asset_id in an app.</li>
+            <li>locker_ids: list of locker_ids for an asset_id and app_id</li>
+          </ol>
+        </li>
+        <li>
+          <pre>{`message LockerProductAssetMapping {
  uint64 app_id 
  repeated uint64 asset_ids 
 }
 `}</pre>
-        <p>LockerProductAssetMapping: Contains list of asset_id for an app eligible for locker</p>
-        <pre>{`message LockedDepositedAmountDataMap
+          <p>LockerProductAssetMapping: Contains list of asset_id for an app eligible for locker</p>
+          <pre>{`message LockedDepositedAmountDataMap
 {
  uint64 asset_id 
  string deposited_amount
 }
 `}</pre>
-        <p>LockedDepositAmountDataMap: Total deposited amount for an asset_id</p>
-        <pre>
-          {`message LockerTotalRewardsByAssetAppWise {
+          <p>LockedDepositAmountDataMap: Total deposited amount for an asset_id</p>
+          <pre>
+            {`message LockerTotalRewardsByAssetAppWise {
  uint64 app_id 
  uint64 asset_id 
  string total_rewards
 }
 `}
-        </pre>
-        <p>LockerTotalRewardsByAssetAppWise: Total rewards distributed to locker owners for an asset_id and app_id</p>
-      </li>
-    </ol>
+          </pre>
+          <p>LockerTotalRewardsByAssetAppWise: Total rewards distributed to locker owners for an asset_id and app_id</p>
+        </li>
+      </ol>
 
-    <h3>Messages: </h3>
+      <h3>Messages: </h3>
 
-    <ol type="1">
-      <li>
-        <p><u>Create Locker for an asset</u></p>
-        <pre>{`message MsgCreateLockerRequest{
+      <ol type="1">
+        <li>
+          <p><u>Create Locker for an asset</u></p>
+          <pre>{`message MsgCreateLockerRequest{
  string depositor
  string amount 
  uint64 asset_id 
  uint64 app_id 
 }
 `}</pre>
-        <p>MsgCreateLockerRequest: depositor can create a locker for an app_id and asset_id. <br />
-        Locker can only be created once for an app_id and asset_id.
-        </p>
-      </li>
-      <li>
-        <p><u>Deposit Asset in Locker</u></p>
-        <pre>
-          {`message MsgDepositAssetRequest {
+          <p>MsgCreateLockerRequest: depositor can create a locker for an app_id and asset_id. <br />
+            Locker can only be created once for an app_id and asset_id.
+          </p>
+        </li>
+        <li>
+          <p><u>Deposit Asset in Locker</u></p>
+          <pre>
+            {`message MsgDepositAssetRequest {
  string depositor 
  string locker_id 
  string amount 
@@ -644,16 +644,16 @@ repeated string locker_ids
  uint64 app_id 
 }
 `}
-        </pre>
-        <p>MsgDepositAssetRequest: depositors can deposit an amount in  a locker for an app_id and asset_id.</p>
-        <ol type="a">
-          <li>locker_id: unique locker id generated on successful locker creation</li>
-        </ol>
-      </li>
-      <li>
-        <p><u>Withdraw Asset  from Locker</u></p>
-        <pre>
-          {` message MsgWithdrawAssetRequest {
+          </pre>
+          <p>MsgDepositAssetRequest: depositors can deposit an amount in  a locker for an app_id and asset_id.</p>
+          <ol type="a">
+            <li>locker_id: unique locker id generated on successful locker creation</li>
+          </ol>
+        </li>
+        <li>
+          <p><u>Withdraw Asset  from Locker</u></p>
+          <pre>
+            {` message MsgWithdrawAssetRequest {
 string depositor
  string locker_id 
  string amount
@@ -661,23 +661,23 @@ string depositor
  uint64 app_id
 }
 `}
-        </pre>
-        <p>MsgWithdrawAssetRequest: depositors can withdraw an amount from a locker for an app_id and asset_id.</p>
-        <ol type="a">
-          <li>locker_id: unique locker id generated on successful locker creation</li>
-        </ol>
-      </li>
-    </ol>
+          </pre>
+          <p>MsgWithdrawAssetRequest: depositors can withdraw an amount from a locker for an app_id and asset_id.</p>
+          <ol type="a">
+            <li>locker_id: unique locker id generated on successful locker creation</li>
+          </ol>
+        </li>
+      </ol>
 
-    <h3>Tokenmint Module: x/tokenmint</h3>
-    <h4>Abstract:</h4>
-    <p>Tokenmint module lets apps create their own tokens with a genesis supply . An app that wished to create their own governance token can create the same via this module.Only one covernance token can exist for an app whereas multiple non governance token can exist for a app. Tokenmint is solely  responsible for minting and burning these tokens .</p>
-    <h4>STATE:</h4>
+      <h3>Tokenmint Module: x/tokenmint</h3>
+      <h4>Abstract:</h4>
+      <p>Tokenmint module lets apps create their own tokens with a genesis supply . An app that wished to create their own governance token can create the same via this module.Only one covernance token can exist for an app whereas multiple non governance token can exist for a app. Tokenmint is solely  responsible for minting and burning these tokens .</p>
+      <h4>STATE:</h4>
 
-    <ol type="1">
-      <li>
-        <p><u>Stores Minted token data app and asset wise</u></p>
-        <pre>{`message TokenMint{
+      <ol type="1">
+        <li>
+          <p><u>Stores Minted token data app and asset wise</u></p>
+          <pre>{`message TokenMint{
  uint64 app_id 
  repeated MintedTokens minted_tokens }
  
@@ -687,43 +687,43 @@ message MintedTokens{
  string current_supply
 }
 `}</pre>
-        <p>TokenMint: Keeps track of genesis and current supply of token minted through an app.</p>
-      </li>
-    </ol>
+          <p>TokenMint: Keeps track of genesis and current supply of token minted through an app.</p>
+        </li>
+      </ol>
 
-    <h4>MESSAGE:</h4>
-    <ol type="1">
-      <li>
-        <p><u>Mints new Token</u></p>
-        <pre>
-          {`message MsgMintNewTokensRequest {
+      <h4>MESSAGE:</h4>
+      <ol type="1">
+        <li>
+          <p><u>Mints new Token</u></p>
+          <pre>
+            {`message MsgMintNewTokensRequest {
    string from  
    uint64 app_id  
    uint64 asset_id }`}
-        </pre>
-        <p>The recipient mapped in MintGenesisToken(Asset Module) can mint the genesis token to its address.</p>
-      </li>
-    </ol>
+          </pre>
+          <p>The recipient mapped in MintGenesisToken(Asset Module) can mint the genesis token to its address.</p>
+        </li>
+      </ol>
 
-    <h3>6. Auction Module: x/auction</h3>
-    <h4>ABSTRACT:</h4>
-    <p>
-      Auction module holds the key functionality for creating /managing auctions across all apps.
-      <br />
-      The auction module has three distinct auction model 
-    </p>
-    <ol type="a">
-      <li><b>Dutch Auction:</b> Collateral auctions for the liquidated vaults take place via this mechanism.Bidders can bid for partial collateral at a price that keeps varying with auction duration starting with a high price and decreasing linearly.</li>
-      <li><b>Surplus Auction(English Auction):</b> Excess surplus of  an asset (collector_asset_id in CollectorLookupTable in Collector module)  is auctioned off for an increasing amount of secondary_asset_id .After the completed auction duration the excess surplus is sent to bidder with highest amount of secondary_asset_id bid.The amount of  secondary_asset_id bid received is the burned via tokenmint module .</li>
-      <li><b>Debt Auction(Reverse Auction):</b> When protocol runs in debt for an asset_id(collector_asset_id in CollectorLookupTable in Collector module) , the debt auction can be triggered to accumulate collector_asset_id for which bidders bids against decreasing amount of secondary_asset_id.Once auction duration is completed , the bidder with lowest bid for secondary_asset_id wins the bid and protocol mints the bid amount of secondary_asset_id for the winner.</li>
-    </ol>
+      <h3>6. Auction Module: x/auction</h3>
+      <h4>ABSTRACT:</h4>
+      <p>
+        Auction module holds the key functionality for creating /managing auctions across all apps.
+        <br />
+        The auction module has three distinct auction model
+      </p>
+      <ol type="a">
+        <li><b>Dutch Auction:</b> Collateral auctions for the liquidated vaults take place via this mechanism.Bidders can bid for partial collateral at a price that keeps varying with auction duration starting with a high price and decreasing linearly.</li>
+        <li><b>Surplus Auction(English Auction):</b> Excess surplus of  an asset (collector_asset_id in CollectorLookupTable in Collector module)  is auctioned off for an increasing amount of secondary_asset_id .After the completed auction duration the excess surplus is sent to bidder with highest amount of secondary_asset_id bid.The amount of  secondary_asset_id bid received is the burned via tokenmint module .</li>
+        <li><b>Debt Auction(Reverse Auction):</b> When protocol runs in debt for an asset_id(collector_asset_id in CollectorLookupTable in Collector module) , the debt auction can be triggered to accumulate collector_asset_id for which bidders bids against decreasing amount of secondary_asset_id.Once auction duration is completed , the bidder with lowest bid for secondary_asset_id wins the bid and protocol mints the bid amount of secondary_asset_id for the winner.</li>
+      </ol>
 
-    <h4>STATE:</h4>
-    <ol type="1">
-      <li>
-        <p><u>Surplus Auction Data</u></p>
-        <pre>
-          {`message SurplusAuction {
+      <h4>STATE:</h4>
+      <ol type="1">
+        <li>
+          <p><u>Surplus Auction Data</u></p>
+          <pre>
+            {`message SurplusAuction {
    uint64 auction_id 
    cosmos.base.v1beta1.Coin sell_token
    cosmos.base.v1beta1.Coin buy_token 
@@ -740,31 +740,31 @@ message MintedTokens{
    uint64 asset_in_id 
    uint64 asset_out_id 
    google.protobuf.Timestamp bid_end_time  }`}
-        </pre>
-        <p>Surplus Auction:</p>
-        <ol type="a">
-          <li>auction_id: unique surplus auction id for an app</li>
-          <li>sell_token: Asset which is up for auction</li>
-          <li>buy_token: Asset to be received from auction</li>
-          <li>active_bidding_id: bidding id counter</li>
-          <li>bidder: last bidder address</li>
-          <li>bid: last bid amount</li>
-          <li>end_time: auction end time</li>
-          <li>bid_factor:The min ratio of difference between two consecutive bids</li>
-          <li>bidding_ids: history of bidders in this auction</li>
-          <li>auction_status: tracks if auction is active/inactive</li>
-          <li>app_id:  unique app id</li>
-          <li>asset_id: matches with collector asset id</li>
-          <li>auction_mapping_id: auction mapping id for surplus auction</li>
-          <li>asset_in_id: Asset to be received from auction</li>
-          <li>asset_out_id: Asset which is up for auction</li>
-          <li>bid_end_time: next bid end time </li>
-        </ol>
-      </li>
-      <li>
-        <p><u>Debt Auction Data</u></p>
-        <pre>
-          {`message DebtAuction {
+          </pre>
+          <p>Surplus Auction:</p>
+          <ol type="a">
+            <li>auction_id: unique surplus auction id for an app</li>
+            <li>sell_token: Asset which is up for auction</li>
+            <li>buy_token: Asset to be received from auction</li>
+            <li>active_bidding_id: bidding id counter</li>
+            <li>bidder: last bidder address</li>
+            <li>bid: last bid amount</li>
+            <li>end_time: auction end time</li>
+            <li>bid_factor:The min ratio of difference between two consecutive bids</li>
+            <li>bidding_ids: history of bidders in this auction</li>
+            <li>auction_status: tracks if auction is active/inactive</li>
+            <li>app_id:  unique app id</li>
+            <li>asset_id: matches with collector asset id</li>
+            <li>auction_mapping_id: auction mapping id for surplus auction</li>
+            <li>asset_in_id: Asset to be received from auction</li>
+            <li>asset_out_id: Asset which is up for auction</li>
+            <li>bid_end_time: next bid end time </li>
+          </ol>
+        </li>
+        <li>
+          <p><u>Debt Auction Data</u></p>
+          <pre>
+            {`message DebtAuction {
    uint64 auction_id 
    cosmos.base.v1beta1.Coin auctioned_token 
    cosmos.base.v1beta1.Coin expected_user_token 
@@ -784,32 +784,32 @@ message MintedTokens{
    google.protobuf.Timestamp bid_end_time
 }
 `}
-        </pre>
-        <p>Debt Auction:</p>
-        <ol type="a">
-          <li>auction_id: unique debt auction id</li>
-          <li>auctioned_token: Asset which is up for auction</li>
-          <li>expected_user_token: Asset to be received from auction</li>
-          <li>expected_minted_token: tracks minted amount</li>
-          <li>end_time: auction end time</li>
-          <li>active_bidding_id: bidding id counter</li>
-          <li>bidder: last bidder address</li>
-          <li>current_bid_amount: current bid amount</li>
-          <li>auction_status: tracks if auction is active/inactive</li>
-          <li>app_id: unique app id</li>
-          <li>asset_id: matches with collector asset id</li>
-          <li>bidding_ids: history of bidders in this auction</li>
-          <li>auction_mapping_id: auction mapping id for debt auction</li>
-          <li>bid_factor:The min ratio of difference between two consecutive bids</li>
-          <li>asset_in_id: Asset to be received from auction</li>
-          <li>asset_out_id: Asset which is up for auction</li>
-          <li>bid_end_time: next bid end time </li>
-        </ol>
-      </li>
-      <li>
-        <p>Dutch Auction Data</p>
-        <pre>
-          {`message DutchAuction {
+          </pre>
+          <p>Debt Auction:</p>
+          <ol type="a">
+            <li>auction_id: unique debt auction id</li>
+            <li>auctioned_token: Asset which is up for auction</li>
+            <li>expected_user_token: Asset to be received from auction</li>
+            <li>expected_minted_token: tracks minted amount</li>
+            <li>end_time: auction end time</li>
+            <li>active_bidding_id: bidding id counter</li>
+            <li>bidder: last bidder address</li>
+            <li>current_bid_amount: current bid amount</li>
+            <li>auction_status: tracks if auction is active/inactive</li>
+            <li>app_id: unique app id</li>
+            <li>asset_id: matches with collector asset id</li>
+            <li>bidding_ids: history of bidders in this auction</li>
+            <li>auction_mapping_id: auction mapping id for debt auction</li>
+            <li>bid_factor:The min ratio of difference between two consecutive bids</li>
+            <li>asset_in_id: Asset to be received from auction</li>
+            <li>asset_out_id: Asset which is up for auction</li>
+            <li>bid_end_time: next bid end time </li>
+          </ol>
+        </li>
+        <li>
+          <p>Dutch Auction Data</p>
+          <pre>
+            {`message DutchAuction {
    uint64 auction_id 
    cosmos.base.v1beta1.Coin outflow_token_init_amount 
    cosmos.base.v1beta1.Coin outflow_token_current_amount
@@ -831,50 +831,50 @@ message MintedTokens{
    string vault_owner
    string liquidation_penalty
 `}
-        </pre>
-        <p><u>Dutch Auction:</u></p>
-        <ol type="a">
-          <li>Auction_id: unique debt auction id</li>
-          <li>Outflow_token_init_amout: initial amount of the collateral up for auction</li>
-          <li>Outflow_token_current_amout: amount of the collateral left in the auction</li>
-          <li>Inflow_token_target_amout: total debt amount to the received </li>
-          <li>Inflow_token_current_amout: debt amount received till now</li>
-          <li>Outflow_token_initial_price: initial price of the collateral token</li>
-          <li>Outflow_token_current_price: current price of the collateral token</li>
-          <li>Outflow_token_end_price: end price of the collateral token</li>
-          <li>Inflow_token_current_price: current price of the debt token</li>
-          <li>End_price: end price of the collateral for the auction</li>
-          <li>Auction_status: tracks if auction is active/inactive</li>
-          <li>Start_time: Start time of auction</li>
-          <li>Bidding_ids: history of bidders in this auction</li>
-          <li>Auction_mapping_id: auction mapping id for dutch auction</li>
-          <li>App_id: unique app id</li>
-          <li>Asset_in_id: debt token id</li>
-          <li>Asset_out_id: collateral token id</li>
-          <li>Locked_vault_id: locked vault id </li>
-          <li>Vault_owner: address of the owner whose vault has been liquidated</li>
-          <li>Liquidation_penalty: liquidation penalty to be deduced from the vault owner </li>
-        </ol>
-      </li>
-      <li>
-        <p> Protocol Statistics </p>
-        <pre>
-          {`message ProtocolStatistics {
+          </pre>
+          <p><u>Dutch Auction:</u></p>
+          <ol type="a">
+            <li>Auction_id: unique debt auction id</li>
+            <li>Outflow_token_init_amout: initial amount of the collateral up for auction</li>
+            <li>Outflow_token_current_amout: amount of the collateral left in the auction</li>
+            <li>Inflow_token_target_amout: total debt amount to the received </li>
+            <li>Inflow_token_current_amout: debt amount received till now</li>
+            <li>Outflow_token_initial_price: initial price of the collateral token</li>
+            <li>Outflow_token_current_price: current price of the collateral token</li>
+            <li>Outflow_token_end_price: end price of the collateral token</li>
+            <li>Inflow_token_current_price: current price of the debt token</li>
+            <li>End_price: end price of the collateral for the auction</li>
+            <li>Auction_status: tracks if auction is active/inactive</li>
+            <li>Start_time: Start time of auction</li>
+            <li>Bidding_ids: history of bidders in this auction</li>
+            <li>Auction_mapping_id: auction mapping id for dutch auction</li>
+            <li>App_id: unique app id</li>
+            <li>Asset_in_id: debt token id</li>
+            <li>Asset_out_id: collateral token id</li>
+            <li>Locked_vault_id: locked vault id </li>
+            <li>Vault_owner: address of the owner whose vault has been liquidated</li>
+            <li>Liquidation_penalty: liquidation penalty to be deduced from the vault owner </li>
+          </ol>
+        </li>
+        <li>
+          <p> Protocol Statistics </p>
+          <pre>
+            {`message ProtocolStatistics {
    uint64 app_id 
    uint64 asset_id
    string loss }`}
-        </pre>
-        <p>Protocol Stats:</p>
-        <ol type="a">
-          <li>App_id; unique app id</li>
-          <li>Asset_id: asset id</li>
-          <li>Loss: tracks the loss which the protocol has encountered</li>
-        </ol>
-      </li>
-      <li>
-        <p><u>Auction params Data</u></p>
-        <pre>
-          {`message AuctionParams{
+          </pre>
+          <p>Protocol Stats:</p>
+          <ol type="a">
+            <li>App_id; unique app id</li>
+            <li>Asset_id: asset id</li>
+            <li>Loss: tracks the loss which the protocol has encountered</li>
+          </ol>
+        </li>
+        <li>
+          <p><u>Auction params Data</u></p>
+          <pre>
+            {`message AuctionParams{
    uint64 app_id 
    uint64 auction_duration_seconds
    string buffer 
@@ -887,25 +887,25 @@ message MintedTokens{
    uint64 bid_duration_seconds
 }
 `}
-        </pre>
-        <p>Auction Prams:</p>
-        <ol type="a">
-          <li>App_id: unique app id</li>
-          <li>Auction_duration_seconds: sets auction duration</li>
-          <li>Buffer:The ratio of initial price to start the auction with.</li>
-          <li>Cusp:The ratio of initial price to end the auction with.</li>
-          <li>Step: Length of time between price drops</li>
-          <li>Price_function_type: defines the price function type used for decrease auction</li>
-          <li>Surplus_id: sets the surplus auction id</li>
-          <li>Debt_id: sets the surplus debt id</li>
-          <li>Dutch_id: sets the dutch auction id</li>
-          <li>Bid_duration_seconds: defines the bid duration between 2 bids for which auction should be active</li>
-        </ol>
-      </li>
-      <li>
-        <p><u>Surplus biddings data</u></p>
-        <pre>
-          {`message SurplusBiddings {
+          </pre>
+          <p>Auction Prams:</p>
+          <ol type="a">
+            <li>App_id: unique app id</li>
+            <li>Auction_duration_seconds: sets auction duration</li>
+            <li>Buffer:The ratio of initial price to start the auction with.</li>
+            <li>Cusp:The ratio of initial price to end the auction with.</li>
+            <li>Step: Length of time between price drops</li>
+            <li>Price_function_type: defines the price function type used for decrease auction</li>
+            <li>Surplus_id: sets the surplus auction id</li>
+            <li>Debt_id: sets the surplus debt id</li>
+            <li>Dutch_id: sets the dutch auction id</li>
+            <li>Bid_duration_seconds: defines the bid duration between 2 bids for which auction should be active</li>
+          </ol>
+        </li>
+        <li>
+          <p><u>Surplus biddings data</u></p>
+          <pre>
+            {`message SurplusBiddings {
    uint64 bidding_id 
    uint64 auction_id 
    string auction_status 
@@ -917,25 +917,25 @@ message MintedTokens{
    uint64 auction_mapping_id
    uint64 app_id }
 `}
-        </pre>
-        <p><u>Surplus biddings data:</u></p>
-        <ol type="a">
-          <li>Bidding_id: bidding id of surplus auction</li>
-          <li>Auction_id: auction id for the bidding</li>
-          <li>Auction_status: tracks if auction is active/inactive</li>
-          <li>Auctioned_collateral: auctioned asset</li>
-          <li>Bidder: bidder address</li>
-          <li>Bid:  bid amount of this bidding</li>
-          <li>Bidding_timestamp: bid timestamp</li>
-          <li>Bidding_status:  tracks if bid is placed/rejected/success</li>
-          <li>Auction_mapping_id: auction mapping id for surplus auction</li>
-          <li>App_id: unique app id</li>
-        </ol>
-      </li>
-      <li>
-        <p><u>Debt biddings Data</u></p>
-        <pre>
-          {`message DebtBiddings {
+          </pre>
+          <p><u>Surplus biddings data:</u></p>
+          <ol type="a">
+            <li>Bidding_id: bidding id of surplus auction</li>
+            <li>Auction_id: auction id for the bidding</li>
+            <li>Auction_status: tracks if auction is active/inactive</li>
+            <li>Auctioned_collateral: auctioned asset</li>
+            <li>Bidder: bidder address</li>
+            <li>Bid:  bid amount of this bidding</li>
+            <li>Bidding_timestamp: bid timestamp</li>
+            <li>Bidding_status:  tracks if bid is placed/rejected/success</li>
+            <li>Auction_mapping_id: auction mapping id for surplus auction</li>
+            <li>App_id: unique app id</li>
+          </ol>
+        </li>
+        <li>
+          <p><u>Debt biddings Data</u></p>
+          <pre>
+            {`message DebtBiddings {
    uint64 bidding_id 
    uint64 auction_id 
    string auction_status 
@@ -946,25 +946,25 @@ message MintedTokens{
    uint64 app_id }
    string bidding_status 
    uint64 auction_mapping_id `}
-        </pre>
-        <p><u>Surplus biddings data:</u></p>
-        <ol type="a">
-          <li>Bidding_id:  bidding id of debt auction</li>
-          <li>Auction_id:  auction id for the bidding</li>
-          <li>Auction_status:  tracks if auction is active/inactive</li>
-          <li>Outflow_tokens: auctioned asset</li>
-          <li>Bidder:  bidder address</li>
-          <li>Bid: bid amount of this bidding</li>
-          <li>Bidding_timestamp: bid timestamp</li>
-          <li>App_id: unique app id</li>
-          <li>Bidding_status: tracks if bid is placed/rejected/success</li>
-          <li>Auction_mapping_id: auction mapping id for surplus auction</li>
-        </ol>
-      </li>
-      <li>
-        <p><u>Dutch biddings Data</u></p>
-        <pre>
-          {`message DutchBiddings {
+          </pre>
+          <p><u>Surplus biddings data:</u></p>
+          <ol type="a">
+            <li>Bidding_id:  bidding id of debt auction</li>
+            <li>Auction_id:  auction id for the bidding</li>
+            <li>Auction_status:  tracks if auction is active/inactive</li>
+            <li>Outflow_tokens: auctioned asset</li>
+            <li>Bidder:  bidder address</li>
+            <li>Bid: bid amount of this bidding</li>
+            <li>Bidding_timestamp: bid timestamp</li>
+            <li>App_id: unique app id</li>
+            <li>Bidding_status: tracks if bid is placed/rejected/success</li>
+            <li>Auction_mapping_id: auction mapping id for surplus auction</li>
+          </ol>
+        </li>
+        <li>
+          <p><u>Dutch biddings Data</u></p>
+          <pre>
+            {`message DutchBiddings {
    uint64 bidding_id 
    uint64 auction_id 
    string auction_status
@@ -977,81 +977,81 @@ message MintedTokens{
    uint64 app_id 
 }
 `}
-        </pre>
-        <p><u>Dutch biddings data:</u></p>
-        <ol type="a">
-          <li>Bidding_id:  bidding id of dutch auction</li>
-          <li>Auction_id:  auction id for the bidding</li>
-          <li>Auction_status:  tracks if auction is active/inactive</li>
-          <li>Outflow_tokens_amount: auctioned asset amount</li>
-          <li>Inflow_token_amount: debt asset amount</li>
-          <li>Bidder:  bidder address</li>
-          <li>Bidding_timestamp: bid timestamp</li>
-          <li>Bidding_status: tracks if bid is placed/rejected/success</li>
-          <li>Auction_mapping_id: auction mapping id for surplus auction</li>
-          <li>App_id: unique app id</li>
-        </ol>
-      </li>
-      <h4>MESSAGES:</h4>
-      <ol type="1">
-        <li>
-          <p><u>Place Surplus Auction Bid</u></p>
-          <pre>
-            {`message MsgPlaceSurplusBidRequest {
+          </pre>
+          <p><u>Dutch biddings data:</u></p>
+          <ol type="a">
+            <li>Bidding_id:  bidding id of dutch auction</li>
+            <li>Auction_id:  auction id for the bidding</li>
+            <li>Auction_status:  tracks if auction is active/inactive</li>
+            <li>Outflow_tokens_amount: auctioned asset amount</li>
+            <li>Inflow_token_amount: debt asset amount</li>
+            <li>Bidder:  bidder address</li>
+            <li>Bidding_timestamp: bid timestamp</li>
+            <li>Bidding_status: tracks if bid is placed/rejected/success</li>
+            <li>Auction_mapping_id: auction mapping id for surplus auction</li>
+            <li>App_id: unique app id</li>
+          </ol>
+        </li>
+        <h4>MESSAGES:</h4>
+        <ol type="1">
+          <li>
+            <p><u>Place Surplus Auction Bid</u></p>
+            <pre>
+              {`message MsgPlaceSurplusBidRequest {
    uint64 auction_id 
    string bidder 
    cosmos.base.v1beta1.Coin amount 
    uint64 app_id 
    uint64 auction_mapping_id
 `}
-          </pre>
-          <p>MsgPlaceSurplusBidRequest: bidders can bid an amount for a surplus auction in terms of the asset that protocol is accepting.</p>
-        </li>
-        <li>
-          <p><u>Place Debt Auction Bid</u></p>
-          <pre>{`message MsgPlaceDebtBidRequest {
+            </pre>
+            <p>MsgPlaceSurplusBidRequest: bidders can bid an amount for a surplus auction in terms of the asset that protocol is accepting.</p>
+          </li>
+          <li>
+            <p><u>Place Debt Auction Bid</u></p>
+            <pre>{`message MsgPlaceDebtBidRequest {
    uint64 auction_id 
    string bidder 
    cosmos.base.v1beta1.Coin bid 
    cosmos.base.v1beta1.Coin expectedUserToken 
    uint64 app_id 
    uint64 auction_mapping_id }`}</pre>
-          <p>
-            MsgPlaceDebtBidRequest: bidders can bid an amount for a debt auction in terms of the asset that protocol is accepting.
-          </p>
-        </li>
-        <li>
-          <p><u>Place Dutch Auction Bid</u></p>
-          <pre>
-            {`message MsgPlaceDutchBidRequest {
+            <p>
+              MsgPlaceDebtBidRequest: bidders can bid an amount for a debt auction in terms of the asset that protocol is accepting.
+            </p>
+          </li>
+          <li>
+            <p><u>Place Dutch Auction Bid</u></p>
+            <pre>
+              {`message MsgPlaceDutchBidRequest {
    uint64 auction_id 
    string bidder 
    cosmos.base.v1beta1.Coin amount 
    string max
    uint64 app_id 
    uint64 auction_mapping_id }`}
-          </pre>
-          <p>
-            MsgPlaceDutchBidRequest: bidders can bid an amount for a dutch auction in terms of how much collateral they want to buy and the max price that should be greater than current price of collateral.
-          </p>
-        </li>
+            </pre>
+            <p>
+              MsgPlaceDutchBidRequest: bidders can bid an amount for a dutch auction in terms of how much collateral they want to buy and the max price that should be greater than current price of collateral.
+            </p>
+          </li>
+        </ol>
       </ol>
-    </ol>
 
-    <h3>7. Rewards Module: x/rewards</h3>
-    <h4>STATE:</h4>
-    <pre>
-      {`message EpochInfo {
+      <h3>7. Rewards Module: x/rewards</h3>
+      <h4>STATE:</h4>
+      <pre>
+        {`message EpochInfo {
    google.protobuf.Timestamp start_time 
    google.protobuf.Duration duration 
    int64 current_epoch 
    int64 current_epoch_start_height 
 }
 `}
-    </pre>
+      </pre>
 
-    <pre>
-      {`message Gauge {
+      <pre>
+        {`message Gauge {
    uint64 id 
    string from 
    google.protobuf.Timestamp created_at 
@@ -1068,24 +1068,24 @@ message MintedTokens{
      LiquidtyGaugeMetaData liquidity_meta_data 
    }
    uint64 app_id }`}
-    </pre>
+      </pre>
 
-    <pre>
-      {`message GaugeByTriggerDuration {
+      <pre>
+        {`message GaugeByTriggerDuration {
    repeated uint64 gauge_ids
 }
 `}
-    </pre>
+      </pre>
 
-    <pre>
-      {`message Internal_rewards{
+      <pre>
+        {`message Internal_rewards{
  uint64 app_mapping_ID
  repeated uint64 asset_ID 
 }
 `}
-    </pre>
+      </pre>
 
-    <pre>{`message Locker_external_rewards{
+      <pre>{`message Locker_external_rewards{
  uint64 id 
  uint64 app_mapping_id
  uint64 asset_id 
@@ -1114,7 +1114,7 @@ message MintedTokens{
  int64 min_lockup_time_seconds 
  uint64 epoch_id }`}</pre>
 
-        <pre>{`message WhitelistedAppIdsVault{
+      <pre>{`message WhitelistedAppIdsVault{
  repeated uint64 whitelisted_app_mapping_ids_vaults }
  
 message EpochTime{
@@ -1214,7 +1214,7 @@ message BorrowMetaData {
 }
 `}
       </pre>
-      
+
       <h3>Market Module: x/market</h3>
       <h4>Abstract:</h4>
       <p>Market module sets the price fetched by Bandoracle module into the market module. After the price being set all the modules fetch the price using this module.</p>
@@ -1298,7 +1298,7 @@ message BorrowMetaData {
 }
 `}</pre>
 
-        <pre>{`message Market {
+          <pre>{`message Market {
  uint64 asset_id 
  uint64 rates
 }
@@ -1336,11 +1336,9 @@ message BorrowMetaData {
         </li>
       </ol>
 
-      <BottomNav 
-        preNavLink="rewards"
-        prevNavText="Rewards"
-        nextNavLink="auctions"
-        nextNavText="Auctions"
+      <BottomNav
+        preNavLink="Faq"
+        prevNavText="Faq"
       />
 
     </div>
