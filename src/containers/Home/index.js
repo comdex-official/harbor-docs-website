@@ -48,7 +48,7 @@ const Home = () => {
   return (
     <div>
       <h2 className="mb-0">Harbor Documentation</h2>
-      <h4 style={{fontSize:"20px", color:"gray"}}>Harbor protocol enables safelisted assets to be locked in Vaults and Composite to be minted</h4>
+      <h4 style={{ fontSize: "20px", color: "gray" }}>Harbor protocol enables safelisted assets to be locked in Vaults and Composite to be minted</h4>
       <h2 className="mb-0 mt-4">Explore Harbor</h2>
       <List
         className="home-list"
@@ -73,7 +73,7 @@ const Home = () => {
         )}
       />
       <div className="bottom-cards">
-        <Link to={{ pathname: "/" }}>
+        <Link to={{ pathname: "https://harborprotocol.one" }} target="_blank">
           <div className="card-items">
             <div className="arrow-link"><SvgIcon name='arrow-topright' viewbox='0 0 22.056 22.504' /></div>
             <SvgIcon name='harbor-icon' viewbox='0 0 21.395 28.5' />
@@ -89,12 +89,12 @@ const Home = () => {
             <p>Chat with the community <br /> on Discord</p>
           </div>
         </Link>
-        <Link to={{ pathname: "/" }}>
+        <Link to={{ pathname: "https://forum.comdex.one/c/site-feedback/2" }} target="_blank">
           <div className="card-items">
             <div className="arrow-link"><SvgIcon name='arrow-topright' viewbox='0 0 22.056 22.504' /></div>
             <SvgIcon name='help-icon' viewbox='0 0 27 31.5' />
             <h4> Found an issue?</h4>
-            <p>Improve this page by adding <br />suggestion on Github </p>
+            <p>Improve this page by adding <br />suggestion on Forum </p>
           </div>
         </Link>
       </div>
