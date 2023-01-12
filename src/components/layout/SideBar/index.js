@@ -222,7 +222,7 @@ const SideBar = () => {
             <Link to={{ pathname: "https://t.me/Composite_Money" }} target="_blank">
               <SvgIcon name="telegram" viewbox="0 0 24.635 20.66" />
             </Link>
-            <Link to={{ pathname: "/" }}>
+            <Link to={{ pathname: "https://bit.ly/ComdexOfficialDiscord" }} target="_blank">
               <SvgIcon name="discord" viewbox="0 0 29.539 22.155" />
             </Link>
           </div>
