@@ -32,7 +32,7 @@ const SideBar = () => {
             </Menu.Item>
 
             <Menu.SubMenu key="m3" title="Harbor Protocol Overview" icon={<SvgIcon name="protocol-icon" viewbox="0 0 36 36" />}>
-              <Menu.Item key="m3" icon={<SvgIcon name="protocol-icon" viewbox="0 0 36 31.5" />}>
+              <Menu.Item key="m3-1" icon={<SvgIcon name="protocol-icon" viewbox="0 0 36 31.5" />}>
                 <NavLink
                   to="/harbor-protocol"
                   className={location.pathname === "/harbor-protocol" ? "selected" : ""}
@@ -41,7 +41,7 @@ const SideBar = () => {
                 </NavLink>
               </Menu.Item>
 
-              <Menu.Item key="m3-1" icon={<SvgIcon name="emmision-icon" viewbox="0 0 36 31.5" />}>
+              <Menu.Item key="m3-2" icon={<SvgIcon name="emmision-icon" viewbox="0 0 36 31.5" />}>
                 <NavLink
                   to="/emissions"
                   className={location.pathname === "/emissions" ? "selected" : ""}
@@ -50,7 +50,7 @@ const SideBar = () => {
                 </NavLink>
               </Menu.Item>
 
-              <Menu.Item key="m3-2" icon={<SvgIcon name="rebase-icon" viewbox="0 0 36 31.5" />}>
+              <Menu.Item key="m3-3" icon={<SvgIcon name="rebase-icon" viewbox="0 0 36 31.5" />}>
                 <NavLink
                   to="/rebase"
                   className={location.pathname === "/rebase" ? "selected" : ""}
@@ -59,7 +59,7 @@ const SideBar = () => {
                 </NavLink>
               </Menu.Item>
 
-              <Menu.Item key="m3-3" icon={<SvgIcon name="vaults-icon" viewbox="0 0 36 31.5" />}>
+              <Menu.Item key="m3-4" icon={<SvgIcon name="vaults-icon" viewbox="0 0 36 31.5" />}>
                 <NavLink
                   to="/vault-voting"
                   className={location.pathname === "/vault-voting" ? "selected" : ""}
@@ -68,7 +68,7 @@ const SideBar = () => {
                 </NavLink>
               </Menu.Item>
 
-              <Menu.Item key="m3-4" icon={<SvgIcon name="reward-icon" viewbox="0 0 36 31.5" />}>
+              <Menu.Item key="m3-5" icon={<SvgIcon name="reward-icon" viewbox="0 0 36 31.5" />}>
                 <NavLink
                   to="/reward-incentive"
                   className={location.pathname === "/reward-incentive" ? "selected" : ""}
