@@ -81,7 +81,7 @@ const Home = () => {
             <p>Link to redirect <br /> to the app </p>
           </div>
         </Link>
-        <Link to={{ pathname: "https://discord.gg/ypUb5Gyh7Z" }} target="_blank">
+        <Link to={{ pathname: "https://bit.ly/ComdexOfficialDiscord" }} target="_blank">
           <div className="card-items">
             <div className="arrow-link"><SvgIcon name='arrow-topright' viewbox='0 0 22.056 22.504' /></div>
             <SvgIcon name='discord' viewbox='0 0 29.539 22.155' />
