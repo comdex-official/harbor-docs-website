@@ -10,7 +10,7 @@ const Emissions = () => {
                     In order to encourage $CMST adoption, 50% of the total supply will be distributed to users in the form of emissions over roughly six years.
                 </p>
                 <p>
-                    Emissions will start at 1% of the total 500M allocated, which makes it 5M for the first week. For the subsequent week, the remaining 545M (550M - 5M emissions from the previous week) will be used, and 1% of 545M will be emitted, which makes the following week's emissions 4,950,000.
+                    Emissions will start at 1% of the total 500M allocated, which makes it 5M for the first week. For the subsequent week, the remaining 495M (500M - 5M emissions from the previous week) will be used, and 1% of 495M will be emitted, which makes the following week's emissions 4,950,000.
                 </p>
                 <p>
                     The amount of $HARBOR tokens locked compared to the circulating supply directly impacts the emissions and reward distribution rate. However, regardless of the quantity of $HARBOR locked up, the long-term outlook is for emissions to decrease.
